@@ -54,6 +54,7 @@
 		87C41CDB1ED896B5001E90F1 /* WatRoom */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE36271EE1E27D00F9D89E /* Classes */,
 				87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */,
 				87C41CDE1ED896B5001E90F1 /* ViewController.swift */,
 				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
@@ -62,6 +63,29 @@
 				87C41CE81ED896B5001E90F1 /* Info.plist */,
 			);
 			path = WatRoom;
+			sourceTree = "<group>";
+		};
+		F4DE36271EE1E27D00F9D89E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36291EE1E31000F9D89E /* Networking */,
+				F4DE36281EE1E30900F9D89E /* Managers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F4DE36281EE1E30900F9D89E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F4DE36291EE1E31000F9D89E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +328,7 @@
 				87C41CED1ED896B5001E90F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
