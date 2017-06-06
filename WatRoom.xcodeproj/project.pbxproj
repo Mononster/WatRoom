@@ -8,24 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
-		87C41CDF1ED896B5001E90F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDE1ED896B5001E90F1 /* ViewController.swift */; };
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
 		87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
-		F4DE36351EE6012E00F9D89E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36331EE6012E00F9D89E /* Coordinator.swift */; };
+		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
+		F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36451EE67AB600F9D89E /* Localizable.strings */; };
+		F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */; };
+		F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36491EE67BC900F9D89E /* Constants.swift */; };
+		F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364A1EE67BC900F9D89E /* Extensions.swift */; };
+		F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364D1EE67BD400F9D89E /* Classroom.swift */; };
+		F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364F1EE67BEA00F9D89E /* Building.swift */; };
+		F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36521EE67C5F00F9D89E /* Coordinator.swift */; };
+		F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */; };
+		F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */; };
+		F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */; };
+		F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */; };
+		F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */; };
+		F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36671EE687C000F9D89E /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87C41CDE1ED896B5001E90F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87C41CE31ED896B5001E90F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C41CE61ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C41CE81ED896B5001E90F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		F4DE36331EE6012E00F9D89E /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
+		F4DE36451EE67AB600F9D89E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigConstants.plist; sourceTree = "<group>"; };
+		F4DE36491EE67BC900F9D89E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4DE364A1EE67BC900F9D89E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F4DE364D1EE67BD400F9D89E /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
+		F4DE364F1EE67BEA00F9D89E /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		F4DE36521EE67C5F00F9D89E /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsListCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsMapCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdLevelCoordinator.swift; sourceTree = "<group>"; };
+		F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsListVC.swift; sourceTree = "<group>"; };
+		F4DE36671EE687C000F9D89E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +84,12 @@
 			children = (
 				F4DE36271EE1E27D00F9D89E /* Classes */,
 				87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */,
-				87C41CDE1ED896B5001E90F1 /* ViewController.swift */,
 				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
 				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
 				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
 				87C41CE81ED896B5001E90F1 /* Info.plist */,
+				F4DE36451EE67AB600F9D89E /* Localizable.strings */,
+				F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */,
 			);
 			path = WatRoom;
 			sourceTree = "<group>";
@@ -72,10 +97,12 @@
 		F4DE36271EE1E27D00F9D89E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE36361EE6731600F9D89E /* Utilities */,
 				F4DE362E1EE5F42100F9D89E /* Coordinators */,
 				F4DE362A1EE211C000F9D89E /* Models */,
 				F4DE36291EE1E31000F9D89E /* DB Networking */,
 				F4DE36281EE1E30900F9D89E /* Managers */,
+				F4DE365C1EE6835300F9D89E /* Sections */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -83,6 +110,7 @@
 		F4DE36281EE1E30900F9D89E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -91,24 +119,95 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = "DB Networking";
-			path = Networking;
+			path = "DB Networking";
 			sourceTree = "<group>";
 		};
 		F4DE362A1EE211C000F9D89E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE364F1EE67BEA00F9D89E /* Building.swift */,
+				F4DE364D1EE67BD400F9D89E /* Classroom.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F4DE362E1EE5F42100F9D89E /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE36511EE67C4F00F9D89E /* Protocol */,
 				F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */,
-				F4DE36331EE6012E00F9D89E /* Coordinator.swift */,
+				F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */,
+				F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */,
+				F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */,
+				F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F4DE36361EE6731600F9D89E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36491EE67BC900F9D89E /* Constants.swift */,
+				F4DE364A1EE67BC900F9D89E /* Extensions.swift */,
+				F4DE36671EE687C000F9D89E /* Protocols.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F4DE36511EE67C4F00F9D89E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36521EE67C5F00F9D89E /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F4DE365C1EE6835300F9D89E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE365D1EE6843100F9D89E /* ClassroomsList */,
+				F4DE36631EE685AA00F9D89E /* ClassroomsMap */,
+				F4DE36641EE685C900F9D89E /* CrowdLevel */,
+				F4DE36651EE685D100F9D89E /* Classroom */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		F4DE365D1EE6843100F9D89E /* ClassroomsList */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36601EE6847C00F9D89E /* View Controllers */,
+			);
+			path = ClassroomsList;
+			sourceTree = "<group>";
+		};
+		F4DE36601EE6847C00F9D89E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F4DE36631EE685AA00F9D89E /* ClassroomsMap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ClassroomsMap;
+			sourceTree = "<group>";
+		};
+		F4DE36641EE685C900F9D89E /* CrowdLevel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CrowdLevel;
+			sourceTree = "<group>";
+		};
+		F4DE36651EE685D100F9D89E /* Classroom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classroom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +242,6 @@
 				TargetAttributes = {
 					87C41CD81ED896B5001E90F1 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 89449AARGW;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -172,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */,
+				F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */,
 				87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */,
+				F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */,
 				87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,10 +284,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4DE36351EE6012E00F9D89E /* Coordinator.swift in Sources */,
+				F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */,
+				F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */,
+				F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */,
+				F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */,
+				F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */,
+				F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */,
 				F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */,
-				87C41CDF1ED896B5001E90F1 /* ViewController.swift in Sources */,
 				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
+				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
+				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
+				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,
+				F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */,
+				F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */,
+				F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +422,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 89449AARGW;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WatRoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,8 +436,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 89449AARGW;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WatRoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";

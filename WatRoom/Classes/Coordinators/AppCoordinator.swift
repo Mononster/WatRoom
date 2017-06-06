@@ -9,22 +9,15 @@
 import Foundation
 import UIKit
 
-
-class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator]
-    
-    required init(withNavigationController nc: UINavigationController) {
-        navigationController = nc
-        childCoordinators = []
+    override func start() {
+        showClassroomsList()
     }
     
-    func start() {
-        showContent()
-    }
-    
-    private func showContent() {
-        // TODO: show room finder
+    private func showClassroomsList() {
+        let classroomsCoordinator = ClassroomsListCoordinator(withNavigationController: navigationController)
+        add(childCoordinator: classroomsCoordinator)
+        classroomsCoordinator.start()
     }
 }
