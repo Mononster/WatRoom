@@ -11,6 +11,7 @@
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
 		87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */; };
+		E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
 		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
 		F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36451EE67AB600F9D89E /* Localizable.strings */; };
@@ -29,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.debug.xcconfig"; sourceTree = "<group>"; };
+		31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.release.xcconfig"; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AFC2FC658BE9F55A761E455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */,
+				428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		87C41CD01ED896B5001E90F1 = {
 			isa = PBXGroup;
 			children = (
 				87C41CDB1ED896B5001E90F1 /* WatRoom */,
 				87C41CDA1ED896B5001E90F1 /* Products */,
+				6AFC2FC658BE9F55A761E455 /* Pods */,
+				AE6681D65053A1E3063BD189 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +108,14 @@
 				F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */,
 			);
 			path = WatRoom;
+			sourceTree = "<group>";
+		};
+		AE6681D65053A1E3063BD189 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F4DE36271EE1E27D00F9D89E /* Classes */ = {
@@ -217,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87C41CEB1ED896B5001E90F1 /* Build configuration list for PBXNativeTarget "WatRoom" */;
 			buildPhases = (
+				DCA3C0323775CF4C08A676ED /* [CP] Check Pods Manifest.lock */,
 				87C41CD51ED896B5001E90F1 /* Sources */,
 				87C41CD61ED896B5001E90F1 /* Frameworks */,
 				87C41CD71ED896B5001E90F1 /* Resources */,
+				8847F956EFF4CEC56D78D8B0 /* [CP] Embed Pods Frameworks */,
+				670CCD8AB8D388C76DFA033B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +269,7 @@
 				TargetAttributes = {
 					87C41CD81ED896B5001E90F1 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = BS52LWRK89;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -278,6 +306,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		670CCD8AB8D388C76DFA033B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8847F956EFF4CEC56D78D8B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA3C0323775CF4C08A676ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87C41CD51ED896B5001E90F1 /* Sources */ = {
@@ -420,28 +496,34 @@
 		};
 		87C41CEC1ED896B5001E90F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = BS52LWRK89;
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		87C41CED1ED896B5001E90F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = BS52LWRK89;
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

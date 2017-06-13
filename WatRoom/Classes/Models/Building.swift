@@ -9,6 +9,8 @@
 import Foundation
 import MapKit
 
+let backendless = Backendless.sharedInstance()
+
 struct Building {
     
     let name: String

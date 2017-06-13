@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     private var appCoordinator: AppCoordinator?
+    
+    let APP_ID = "9F11ABD4-8F7E-95C4-FFF9-A9A2D8C8C300"
+    let SECRET_KEY = "36F1CE3B-250C-EF40-FFFD-A245FC362400"
+    
+    var backendless = Backendless.sharedInstance()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appCoordinator = AppCoordinator.init(withNavigationController: root)
             appCoordinator?.start()
         }
+        
+        backendless?.initApp(APP_ID, apiKey:SECRET_KEY)
         
         return true
     }
