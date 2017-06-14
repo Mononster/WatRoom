@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appCoordinator?.start()
         }
         
-        backendless?.initApp(APP_ID, apiKey:SECRET_KEY)
+        backendless!.initApp(APP_ID, apiKey:SECRET_KEY)
         
         return true
     }

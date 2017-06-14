@@ -9,7 +9,11 @@
 import Foundation
 
 
-struct Classroom {
+final class Classroom : NSObject{
     
-    let roomNumber: Int
+    let roomID : String
+    
+    init(ID: String) {
+        self.roomID = ID
+    }
 }
