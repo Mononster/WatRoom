@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         backendless?.initApp(APP_ID, apiKey:SECRET_KEY)
         
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

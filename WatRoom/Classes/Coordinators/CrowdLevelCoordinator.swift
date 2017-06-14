@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+protocol CrowdLevelCoordinatorDelegate: class {
+    func crowdLevelCoordinatorDidDismiss(_ coordinator: Coordinator)
+}
+
+final class CrowdLevelCoordinator: Coordinator {
+    
+    weak var delegate: CrowdLevelCoordinatorDelegate?
+    
+    override func start() {
+        guard let crowdLevelVC = UIStoryboard.main.instantiateViewController(withIdentifier:
+            CrowdLevelVC.identifier) as? CrowdLevelVC else { return }
+        
+        crowdLevelVC.delegate = self
+        navigationController.pushViewController(crowdLevelVC, animated: false)
+    }
+}
+
+extension CrowdLevelCoordinator: CrowdLevelVCDelegate {
+    
+    func didTapBack() {
+        delegate?.crowdLevelCoordinatorDidDismiss(self)
+    }
+}
