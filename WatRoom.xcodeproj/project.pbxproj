@@ -14,6 +14,7 @@
 		AD54BF841EF1F02B006AF018 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54BF831EF1F02B006AF018 /* Date.swift */; };
 		AD981D051EF1DD4A0009B1FD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD981D041EF1DD4A0009B1FD /* RealmSwift.framework */; };
 		E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */; };
+		F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
 		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
 		F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36451EE67AB600F9D89E /* Localizable.strings */; };
@@ -24,7 +25,6 @@
 		F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364F1EE67BEA00F9D89E /* Building.swift */; };
 		F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36521EE67C5F00F9D89E /* Coordinator.swift */; };
 		F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */; };
-		F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */; };
 		F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */; };
 		F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */; };
 		F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */; };
@@ -41,10 +41,11 @@
 		87C41CE31ED896B5001E90F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C41CE61ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C41CE81ED896B5001E90F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD54BF831EF1F02B006AF018 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+        AD54BF831EF1F02B006AF018 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AD91DF441EF1D5E1007050B3 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../Library/Developer/Xcode/DerivedData/WatRoom-acaprawryioxujacdkvsssmhxaju/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
 		AD981D041EF1DD4A0009B1FD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		ADF42EE11EF1D0B500D9C4CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrowdLevelVC.swift; path = CrowdLevel/CrowdLevelVC.swift; sourceTree = "<group>"; };
 		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
 		F4DE36451EE67AB600F9D89E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 				F4DE36511EE67C4F00F9D89E /* Protocol */,
 				F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */,
 				F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */,
-				F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */,
 				F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */,
 				F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */,
 			);
@@ -234,6 +234,7 @@
 		F4DE36641EE685C900F9D89E /* CrowdLevel */ = {
 			isa = PBXGroup;
 			children = (
+				F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */,
 			);
 			name = CrowdLevel;
 			sourceTree = "<group>";
@@ -280,7 +281,6 @@
 				TargetAttributes = {
 					87C41CD81ED896B5001E90F1 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = BS52LWRK89;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -378,13 +378,13 @@
 				F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */,
 				F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */,
 				F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */,
+				F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */,
 				F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */,
 				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
 				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
 				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
 				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,
 				F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */,
-				F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */,
 				F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,11 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BS52LWRK89;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
-				);
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,11 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BS52LWRK89;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
-				);
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
