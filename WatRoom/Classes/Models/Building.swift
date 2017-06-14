@@ -39,12 +39,13 @@ class Building : NSObject{
         self.buildingName = buildingName
         self.latitude = latitude
         self.longitude = longitude
+        self.classrooms = classrooms
     }
 
     init?(buildingCode : String) {
         let ID = buildingCode
         var result: Building?
-        if let building = getLocalCopyByID(ID: ID) {
+        if let building = Building.getLocalCopyByID(ID: ID) {
             result = building
         }else {
             return nil
@@ -94,7 +95,7 @@ class Building : NSObject{
     }
     */
     
-    func getLocalCopyByID(ID: String) -> Building? {
+    static func getLocalCopyByID(ID: String) -> Building? {
         do {
             let db = try Connection("Library/Application support/db.sqlite3")
             let buildings = Table("Buildings")
@@ -110,7 +111,7 @@ class Building : NSObject{
                     var crooms = [Classroom]()
                     
                     for cID in classroomIDS {
-                        crooms.append(Classroom(cID))
+                        crooms.append(Classroom(ID: cID))
                     }
                     
                     return Building(buildingCode: ID,
