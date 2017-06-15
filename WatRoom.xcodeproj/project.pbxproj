@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8707E5921EF09676006CCDE4 /* DropDownMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5811EF09676006CCDE4 /* DropDownMenuCell.swift */; };
+		8707E5931EF09676006CCDE4 /* DropDownMenuTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8707E5821EF09676006CCDE4 /* DropDownMenuTimeCell.xib */; };
+		8707E5941EF09676006CCDE4 /* DropDownMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8707E5831EF09676006CCDE4 /* DropDownMenuCell.xib */; };
+		8707E5951EF09676006CCDE4 /* DropDownMenuTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5841EF09676006CCDE4 /* DropDownMenuTimeCell.swift */; };
+		8707E5961EF09676006CCDE4 /* DateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5861EF09676006CCDE4 /* DateControl.swift */; };
+		8707E5971EF09676006CCDE4 /* DropDownMenuConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5871EF09676006CCDE4 /* DropDownMenuConfig.swift */; };
+		8707E5981EF09676006CCDE4 /* MidPointCircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5891EF09676006CCDE4 /* MidPointCircularSlider.swift */; };
+		8707E5991EF09676006CCDE4 /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E58A1EF09676006CCDE4 /* CircularSlider.swift */; };
+		8707E59A1EF09676006CCDE4 /* CircularSlider+Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E58B1EF09676006CCDE4 /* CircularSlider+Draw.swift */; };
+		8707E59B1EF09676006CCDE4 /* CircularSliderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E58C1EF09676006CCDE4 /* CircularSliderHelper.swift */; };
+		8707E59C1EF09676006CCDE4 /* RangeCircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E58D1EF09676006CCDE4 /* RangeCircularSlider.swift */; };
+		8707E59D1EF09676006CCDE4 /* NavigationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8707E58F1EF09676006CCDE4 /* NavigationButton.xib */; };
+		8707E59E1EF09676006CCDE4 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5901EF09676006CCDE4 /* NavigationButton.swift */; };
+		8707E59F1EF09676006CCDE4 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5911EF09676006CCDE4 /* DropDownMenu.swift */; };
+		8707E5A21EF09747006CCDE4 /* Date+Weekdays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5A01EF09747006CCDE4 /* Date+Weekdays.swift */; };
+		8707E5A31EF09747006CCDE4 /* Date+TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707E5A11EF09747006CCDE4 /* Date+TimeFormat.swift */; };
+		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
+		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
+		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
+		87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */; };
+		E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */; };
+		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
+		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
+		F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36451EE67AB600F9D89E /* Localizable.strings */; };
+		F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */; };
+		F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36491EE67BC900F9D89E /* Constants.swift */; };
+		F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364A1EE67BC900F9D89E /* Extensions.swift */; };
+		F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364D1EE67BD400F9D89E /* Classroom.swift */; };
+		F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE364F1EE67BEA00F9D89E /* Building.swift */; };
+		F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36521EE67C5F00F9D89E /* Coordinator.swift */; };
+		F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */; };
+		F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */; };
+		F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */; };
+		F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */; };
+		F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */; };
+		F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36671EE687C000F9D89E /* Protocols.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.debug.xcconfig"; sourceTree = "<group>"; };
+		31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.release.xcconfig"; sourceTree = "<group>"; };
+		8707E5811EF09676006CCDE4 /* DropDownMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenuCell.swift; sourceTree = "<group>"; };
+		8707E5821EF09676006CCDE4 /* DropDownMenuTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownMenuTimeCell.xib; sourceTree = "<group>"; };
+		8707E5831EF09676006CCDE4 /* DropDownMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownMenuCell.xib; sourceTree = "<group>"; };
+		8707E5841EF09676006CCDE4 /* DropDownMenuTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenuTimeCell.swift; sourceTree = "<group>"; };
+		8707E5861EF09676006CCDE4 /* DateControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateControl.swift; sourceTree = "<group>"; };
+		8707E5871EF09676006CCDE4 /* DropDownMenuConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenuConfig.swift; sourceTree = "<group>"; };
+		8707E5891EF09676006CCDE4 /* MidPointCircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidPointCircularSlider.swift; sourceTree = "<group>"; };
+		8707E58A1EF09676006CCDE4 /* CircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
+		8707E58B1EF09676006CCDE4 /* CircularSlider+Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CircularSlider+Draw.swift"; sourceTree = "<group>"; };
+		8707E58C1EF09676006CCDE4 /* CircularSliderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularSliderHelper.swift; sourceTree = "<group>"; };
+		8707E58D1EF09676006CCDE4 /* RangeCircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeCircularSlider.swift; sourceTree = "<group>"; };
+		8707E58F1EF09676006CCDE4 /* NavigationButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationButton.xib; sourceTree = "<group>"; };
+		8707E5901EF09676006CCDE4 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		8707E5911EF09676006CCDE4 /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		8707E5A01EF09747006CCDE4 /* Date+Weekdays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Weekdays.swift"; path = "../../../../WatRoom 5.52.43 PM/WatRoom/Classes/Utilities/Date+Weekdays.swift"; sourceTree = "<group>"; };
+		8707E5A11EF09747006CCDE4 /* Date+TimeFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+TimeFormat.swift"; path = "../../../../WatRoom 5.52.43 PM/WatRoom/Classes/Utilities/Date+TimeFormat.swift"; sourceTree = "<group>"; };
+		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87C41CE31ED896B5001E90F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87C41CE61ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87C41CE81ED896B5001E90F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
+		F4DE36451EE67AB600F9D89E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigConstants.plist; sourceTree = "<group>"; };
+		F4DE36491EE67BC900F9D89E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4DE364A1EE67BC900F9D89E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F4DE364D1EE67BD400F9D89E /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
+		F4DE364F1EE67BEA00F9D89E /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		F4DE36521EE67C5F00F9D89E /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsListCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsMapCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdLevelCoordinator.swift; sourceTree = "<group>"; };
+		F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomCoordinator.swift; sourceTree = "<group>"; };
+		F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsListVC.swift; sourceTree = "<group>"; };
+		F4DE36671EE687C000F9D89E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87C41CD61ED896B5001E90F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AFC2FC658BE9F55A761E455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */,
+				428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8707E57E1EF09676006CCDE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8707E57F1EF09676006CCDE4 /* DropDownMenu */,
+			);
+			name = Views;
+			path = "../../../../../WatRoom 5.52.43 PM/WatRoom/Classes/Sections/ClassroomsList/Views";
+			sourceTree = "<group>";
+		};
+		8707E57F1EF09676006CCDE4 /* DropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8707E5881EF09676006CCDE4 /* CircularSlider */,
+				8707E5851EF09676006CCDE4 /* DateControl */,
+				8707E5801EF09676006CCDE4 /* DropDownMenuCell */,
+				8707E58E1EF09676006CCDE4 /* NavigationButton */,
+				8707E5871EF09676006CCDE4 /* DropDownMenuConfig.swift */,
+				8707E5911EF09676006CCDE4 /* DropDownMenu.swift */,
+			);
+			path = DropDownMenu;
+			sourceTree = "<group>";
+		};
+		8707E5801EF09676006CCDE4 /* DropDownMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				8707E5811EF09676006CCDE4 /* DropDownMenuCell.swift */,
+				8707E5821EF09676006CCDE4 /* DropDownMenuTimeCell.xib */,
+				8707E5831EF09676006CCDE4 /* DropDownMenuCell.xib */,
+				8707E5841EF09676006CCDE4 /* DropDownMenuTimeCell.swift */,
+			);
+			path = DropDownMenuCell;
+			sourceTree = "<group>";
+		};
+		8707E5851EF09676006CCDE4 /* DateControl */ = {
+			isa = PBXGroup;
+			children = (
+				8707E5861EF09676006CCDE4 /* DateControl.swift */,
+			);
+			path = DateControl;
+			sourceTree = "<group>";
+		};
+		8707E5881EF09676006CCDE4 /* CircularSlider */ = {
+			isa = PBXGroup;
+			children = (
+				8707E5891EF09676006CCDE4 /* MidPointCircularSlider.swift */,
+				8707E58A1EF09676006CCDE4 /* CircularSlider.swift */,
+				8707E58B1EF09676006CCDE4 /* CircularSlider+Draw.swift */,
+				8707E58C1EF09676006CCDE4 /* CircularSliderHelper.swift */,
+				8707E58D1EF09676006CCDE4 /* RangeCircularSlider.swift */,
+			);
+			path = CircularSlider;
+			sourceTree = "<group>";
+		};
+		8707E58E1EF09676006CCDE4 /* NavigationButton */ = {
+			isa = PBXGroup;
+			children = (
+				8707E58F1EF09676006CCDE4 /* NavigationButton.xib */,
+				8707E5901EF09676006CCDE4 /* NavigationButton.swift */,
+			);
+			path = NavigationButton;
+			sourceTree = "<group>";
+		};
+		87C41CD01ED896B5001E90F1 = {
+			isa = PBXGroup;
+			children = (
+				87C41CDB1ED896B5001E90F1 /* WatRoom */,
+				87C41CDA1ED896B5001E90F1 /* Products */,
+				6AFC2FC658BE9F55A761E455 /* Pods */,
+				AE6681D65053A1E3063BD189 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		87C41CDA1ED896B5001E90F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87C41CD91ED896B5001E90F1 /* WatRoom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87C41CDB1ED896B5001E90F1 /* WatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36271EE1E27D00F9D89E /* Classes */,
+				87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */,
+				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
+				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
+				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
+				87C41CE81ED896B5001E90F1 /* Info.plist */,
+				F4DE36451EE67AB600F9D89E /* Localizable.strings */,
+				F4DE36471EE67B0300F9D89E /* ConfigConstants.plist */,
+			);
+			path = WatRoom;
+			sourceTree = "<group>";
+		};
+		AE6681D65053A1E3063BD189 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4DE36271EE1E27D00F9D89E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36361EE6731600F9D89E /* Utilities */,
+				F4DE362E1EE5F42100F9D89E /* Coordinators */,
+				F4DE362A1EE211C000F9D89E /* Models */,
+				F4DE36291EE1E31000F9D89E /* DB Networking */,
+				F4DE36281EE1E30900F9D89E /* Managers */,
+				F4DE365C1EE6835300F9D89E /* Sections */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F4DE36281EE1E30900F9D89E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F4DE36291EE1E31000F9D89E /* DB Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "DB Networking";
+			sourceTree = "<group>";
+		};
+		F4DE362A1EE211C000F9D89E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE364F1EE67BEA00F9D89E /* Building.swift */,
+				F4DE364D1EE67BD400F9D89E /* Classroom.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DE362E1EE5F42100F9D89E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36511EE67C4F00F9D89E /* Protocol */,
+				F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */,
+				F4DE36541EE67DB900F9D89E /* ClassroomsListCoordinator.swift */,
+				F4DE36561EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift */,
+				F4DE36581EE67E3400F9D89E /* CrowdLevelCoordinator.swift */,
+				F4DE365A1EE67E4D00F9D89E /* ClassroomCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F4DE36361EE6731600F9D89E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8707E5A11EF09747006CCDE4 /* Date+TimeFormat.swift */,
+				8707E5A01EF09747006CCDE4 /* Date+Weekdays.swift */,
+				F4DE36491EE67BC900F9D89E /* Constants.swift */,
+				F4DE364A1EE67BC900F9D89E /* Extensions.swift */,
+				F4DE36671EE687C000F9D89E /* Protocols.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F4DE36511EE67C4F00F9D89E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36521EE67C5F00F9D89E /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F4DE365C1EE6835300F9D89E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE365D1EE6843100F9D89E /* ClassroomsList */,
+				F4DE36631EE685AA00F9D89E /* ClassroomsMap */,
+				F4DE36641EE685C900F9D89E /* CrowdLevel */,
+				F4DE36651EE685D100F9D89E /* Classroom */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		F4DE365D1EE6843100F9D89E /* ClassroomsList */ = {
+			isa = PBXGroup;
+			children = (
+				8707E57E1EF09676006CCDE4 /* Views */,
+				F4DE36601EE6847C00F9D89E /* View Controllers */,
+			);
+			path = ClassroomsList;
+			sourceTree = "<group>";
+		};
+		F4DE36601EE6847C00F9D89E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4DE36611EE684AA00F9D89E /* ClassroomsListVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F4DE36631EE685AA00F9D89E /* ClassroomsMap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ClassroomsMap;
+			sourceTree = "<group>";
+		};
+		F4DE36641EE685C900F9D89E /* CrowdLevel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CrowdLevel;
+			sourceTree = "<group>";
+		};
+		F4DE36651EE685D100F9D89E /* Classroom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classroom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87C41CD81ED896B5001E90F1 /* WatRoom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C41CEB1ED896B5001E90F1 /* Build configuration list for PBXNativeTarget "WatRoom" */;
+			buildPhases = (
+				DCA3C0323775CF4C08A676ED /* [CP] Check Pods Manifest.lock */,
+				87C41CD51ED896B5001E90F1 /* Sources */,
+				87C41CD61ED896B5001E90F1 /* Frameworks */,
+				87C41CD71ED896B5001E90F1 /* Resources */,
+				8847F956EFF4CEC56D78D8B0 /* [CP] Embed Pods Frameworks */,
+				670CCD8AB8D388C76DFA033B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatRoom;
+			productName = WatRoom;
+			productReference = 87C41CD91ED896B5001E90F1 /* WatRoom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87C41CD11ED896B5001E90F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Monster;
+				TargetAttributes = {
+					87C41CD81ED896B5001E90F1 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 89449AARGW;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 87C41CD41ED896B5001E90F1 /* Build configuration list for PBXProject "WatRoom" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87C41CD01ED896B5001E90F1;
+			productRefGroup = 87C41CDA1ED896B5001E90F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87C41CD81ED896B5001E90F1 /* WatRoom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87C41CD71ED896B5001E90F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */,
+				8707E59D1EF09676006CCDE4 /* NavigationButton.xib in Resources */,
+				F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */,
+				8707E5931EF09676006CCDE4 /* DropDownMenuTimeCell.xib in Resources */,
+				87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */,
+				F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */,
+				8707E5941EF09676006CCDE4 /* DropDownMenuCell.xib in Resources */,
+				87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		670CCD8AB8D388C76DFA033B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8847F956EFF4CEC56D78D8B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA3C0323775CF4C08A676ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87C41CD51ED896B5001E90F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */,
+				F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */,
+				8707E5A31EF09747006CCDE4 /* Date+TimeFormat.swift in Sources */,
+				F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */,
+				8707E5991EF09676006CCDE4 /* CircularSlider.swift in Sources */,
+				F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */,
+				8707E59E1EF09676006CCDE4 /* NavigationButton.swift in Sources */,
+				F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */,
+				F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */,
+				8707E5951EF09676006CCDE4 /* DropDownMenuTimeCell.swift in Sources */,
+				8707E59A1EF09676006CCDE4 /* CircularSlider+Draw.swift in Sources */,
+				F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */,
+				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
+				8707E5A21EF09747006CCDE4 /* Date+Weekdays.swift in Sources */,
+				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
+				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
+				8707E5971EF09676006CCDE4 /* DropDownMenuConfig.swift in Sources */,
+				8707E59C1EF09676006CCDE4 /* RangeCircularSlider.swift in Sources */,
+				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,
+				8707E59F1EF09676006CCDE4 /* DropDownMenu.swift in Sources */,
+				F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */,
+				8707E5921EF09676006CCDE4 /* DropDownMenuCell.swift in Sources */,
+				F4DE36571EE67DDF00F9D89E /* ClassroomsMapCoordinator.swift in Sources */,
+				F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */,
+				8707E59B1EF09676006CCDE4 /* CircularSliderHelper.swift in Sources */,
+				8707E5981EF09676006CCDE4 /* MidPointCircularSlider.swift in Sources */,
+				8707E5961EF09676006CCDE4 /* DateControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		87C41CE01ED896B5001E90F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C41CE11ED896B5001E90F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C41CE61ED896B5001E90F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87C41CE91ED896B5001E90F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87C41CEA1ED896B5001E90F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C41CEC1ED896B5001E90F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 89449AARGW;
+				INFOPLIST_FILE = WatRoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		87C41CED1ED896B5001E90F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 89449AARGW;
+				INFOPLIST_FILE = WatRoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C41CD41ED896B5001E90F1 /* Build configuration list for PBXProject "WatRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C41CE91ED896B5001E90F1 /* Debug */,
+				87C41CEA1ED896B5001E90F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C41CEB1ED896B5001E90F1 /* Build configuration list for PBXNativeTarget "WatRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C41CEC1ED896B5001E90F1 /* Debug */,
+				87C41CED1ED896B5001E90F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87C41CD11ED896B5001E90F1 /* Project object */;
+}

@@ -1,0 +1,29 @@
+2017-06-11 01:26:00,810 [INFO] JDK from "JAVA_HOME" - C:\Program Files\Java\jdk1.8.0_111
+2017-06-11 01:26:00,822 [ERROR] tools.jar couldn't be found at "JAVA_HOME" directory.
+2017-06-11 01:26:01,071 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2017-06-11 01:26:01,072 [INFO] Copyright(C) 2017 Backendless Corp. All rights reserved. 
+2017-06-11 01:26:01,073 [INFO] Version: 4.0.0 Build date: 2017-06-02T12:33:56Z
+2017-06-11 01:26:01,081 [INFO] CodeRunner session is running for 2 hours and will be terminated on 03:26:01.078[UTC]
+2017-06-11 01:26:01,124 [INFO] Registering runner on: 'https://api.backendless.com'
+2017-06-11 01:26:01,126 [INFO] Application ID:  '9F11ABD4-8F7E-95C4-FFF9-A9A2D8C8C300'
+2017-06-11 01:26:01,127 [INFO] Secret key:      'CF4006AB-2E3A-7582-FF75-B10D0F434C00'
+2017-06-11 01:26:09,502 [INFO] Runner successfully registered
+2017-06-11 01:26:09,527 [INFO] Parsing event model...
+2017-06-11 01:26:41,031 [INFO] Debugging Utility disconnected successfully
+2017-06-11 01:26:41,036 [INFO] Thank you for using Backendless
+2017-06-11 01:30:07,298 [INFO] JDK from "JAVA_HOME" - C:\Program Files\Java\jdk1.8.0_111
+2017-06-11 01:30:07,301 [ERROR] tools.jar couldn't be found at "JAVA_HOME" directory.
+2017-06-11 01:30:07,500 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2017-06-11 01:30:07,501 [INFO] Copyright(C) 2017 Backendless Corp. All rights reserved. 
+2017-06-11 01:30:07,503 [INFO] Version: 4.0.0 Build date: 2017-06-02T12:33:56Z
+2017-06-11 01:30:07,509 [INFO] CodeRunner session is running for 2 hours and will be terminated on 03:30:07.507[UTC]
+2017-06-11 01:30:07,549 [INFO] Registering runner on: 'https://api.backendless.com'
+2017-06-11 01:30:07,550 [INFO] Application ID:  '9F11ABD4-8F7E-95C4-FFF9-A9A2D8C8C300'
+2017-06-11 01:30:07,552 [INFO] Secret key:      'CF4006AB-2E3A-7582-FF75-B10D0F434C00'
+2017-06-11 01:30:13,749 [INFO] Runner successfully registered
+2017-06-11 01:30:13,767 [INFO] Parsing event model...
+2017-06-11 01:30:13,848 [WARN] Timer's 'uw' start time is in the past. The timer will run accordingly to the schedule.
+2017-06-11 01:30:16,882 [INFO] Build successfully: 0 handlers, 1 timer
+2017-06-11 01:30:16,891 [INFO] Deploying model to server, and starting debug...
+2017-06-11 01:30:17,159 [INFO] Model successfully deployed.
+2017-06-11 01:30:17,160 [INFO] Waiting for events...
