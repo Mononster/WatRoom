@@ -23,7 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController()
+        
+        let navVC = UINavigationController()
+        navVC.navigationBar.tintColor = UIColor.gray
+        window?.rootViewController = navVC
         
         if let root = window?.rootViewController as? UINavigationController {
             appCoordinator = AppCoordinator.init(withNavigationController: root)

@@ -18,6 +18,14 @@ struct Palette {
     static var gray: UIColor {
         return UIColor.init(red: 124/255, green: 124/255, blue: 124/255, alpha: 1.0)
     }
+    
+    static var themeColor: UIColor {
+        return UIColor.init(netHex: 0xff5647)
+    }
+    
+    static var dateControlTextColor: UIColor {
+        return UIColor.darkGray
+    }
 }
 
 struct Font {
