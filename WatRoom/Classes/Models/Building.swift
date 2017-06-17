@@ -10,22 +10,6 @@ import Foundation
 import MapKit
 import SQLite
 
-func CSVToArray(CSV: String) -> [String] {
-    let temp = CSV.components(separatedBy: ",")
-    return temp
-}
-
-func ArrayToCSV(array: [String]) -> String {
-    var temp: String = ""
-    for s in array {
-        temp.append(s)
-        if array.index(of: s) != array.count - 1 {
-            temp.append(",")
-        }
-    }
-    return temp
-}
-
 class Building : NSObject{
     
     let buildingCode: String
