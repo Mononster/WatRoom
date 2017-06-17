@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SQLite
 
 func CSVToArray(CSV: String) -> [String] {
     let temp = CSV.components(separatedBy: ",")
@@ -24,3 +25,7 @@ func ArrayToCSV(array: [String]) -> String {
     return temp
 }
 
+func Init() {
+    Building.initTable()
+    Classroom.initTable()
+}

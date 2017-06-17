@@ -42,55 +42,73 @@ class Building : NSObject{
         self.classrooms = final.classrooms
     }
     
-    /* probably not needed for Building, can be used for classroom
-     
-    func getServerCopyByID(ID: String) -> Building? {
-        var error:String = ""
-        var building : Building? = nil
+    static func initTable() -> Bool {
+        do {
+            let db = try Connection("Library/Application support/db.sqlite3")
+        }catch {
+            return false
+        }
+        let buildingCode = Expression<String>("buildingCode")
+        let buildingName = Expression<String>("buildingName")
+        let latitude = Expression<Double>("latitude")
+        let longitude = Expression<Double>("longitude")
+        let classrooms = Expression<String>("classrooms")
+        let stmt = try db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='Buildings'")
+        for row in stmt {
+            for (index, name) in stmt.columnNames.enumerate() {
+                NSLog("Table \"Building\" already exists, proceeding...")
+                return true
+            }
+        }
+        do {
+            try db.run(users.create(ifNotExists: true) { t in
+                t.column(buildingCode, primaryKey: true) //     "id" INTEGER PRIMARY KEY NOT NULL,
+                t.column(buildingName)  //     "email" TEXT UNIQUE NOT NULL,
+                t.column(latitude)
+                t.column(longitude)
+                t.column(classrooms)
+                })
+        }catch {
+            return false
+        }
+        var results : [Building]
         if let backendless = Backendless.sharedInstance() {
             if let dataStore = backendless.data.of(Building.ofClass()) {
-                let query : DataQueryBuilder = DataQueryBuilder()
-                query.setWhereClause("buildingCode='" + ID + "'")
-                dataStore.find(query,
-                               response:{(result : [Any]?) -> Void in
-                                let result = result!
-                                if result.count == 0 {
-                                    error = "Building with ID:" + ID + " not found"
-                                }else {
-                                    building = (result[0] as! Building)
-                                }
-                },
-                               error:{(e:Fault?) -> Void in
-                                if let e = e {
-                                    error = e.detail
-                                }
-                })
+                do {
+                    try results = dataStore.find()
+                }catch {
+                    NSLog("Downloading failed, check your internet connection!")
+                    return false
+                }
             }else {
-                error = "dataStore for Building not initialized properly"
+                return false
             }
         }else {
-            error = "Backendless not initialized properly"
+            return false
         }
-        
-        if building == nil {
-            NSLog(error)
+        for b in results {
+            do {
+                try db.run(users.insert(or: .replace,
+                    buildingCode <- b.buildingCode,
+                    buildingName <- b.buildingName,
+                    latitude <- b.latitude,
+                    longitude <- b.longitude,
+                    classrooms <- b.classrooms))
+            }catch {
+                NSLog("An error has happened")
+                return false
+            }
         }
-        return building
+        return true
     }
-    */
     
     static func getLocalCopyByID(ID: String) -> Building? {
         do {
             let db = try Connection("Library/Application support/db.sqlite3")
+            let buildingCode = Expression<String>("buildingCode")
             let buildings = Table("Buildings")
-            for building in try db.prepare(buildings) {
-                let buildingCode = Expression<String>("buildingCode")
-                //let expiryDate = Expression<Date>("expiryDate")
-                if building[buildingCode] == ID {
-                    //if building[expiryDate] <= Date() {
-                        //let freshBuilding = getServerCopyByID(ID: ID)
-                    //}
-                    let classroomIDS = CSVToArray(CSV: building[Expression<String>("classrooms")])
+            for building in try db.prepare(buildings.filter(buildingCode == ID)) {
+                    let classroomIDS = CSVToArray(CSV: building[])
                     
                     var crooms = [Classroom]()
                     
@@ -103,31 +121,10 @@ class Building : NSObject{
                                     latitude: building[Expression<Double>("latitude")],
                                     longitude: building[Expression<Double>("longitude")],
                                     classrooms: crooms)
-                }
             }
         }catch let error as NSError{
             NSLog(error.description)
         }
         return nil
     }
-    
-    /*
-        shouldn't be needed
-    func save() -> Bool {
-        var result : Bool = true
-        if let backendless = Backendless.sharedInstance() {
-            if let dataStore = backendless.data.of(Building.ofClass()) {
-                dataStore.save(self, response: nil, error: {(error:Fault?) -> Void in
-                    if let error = error {
-                        NSLog(error.detail)
-                        result = false
-                    }else {
-                        result = true
-                    }
-                })
-            }
-        }
-        return result
-    }
-    */
 }
