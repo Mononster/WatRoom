@@ -26,6 +26,9 @@ func ArrayToCSV(array: [String]) -> String {
 }
 
 func Init() {
-    Building.initTable()
-    Classroom.initTable()
+    let resultb = Building.initTable()
+    //let resultc = Classroom.initTable()
+    if !resultb {
+        NSLog("Init failed")
+    }
 }

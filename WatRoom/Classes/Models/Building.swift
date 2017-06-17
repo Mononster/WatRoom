@@ -43,6 +43,7 @@ class Building : NSObject{
     }
     
     static func initTable() -> Bool {
+        var db : Connection
         do {
             let db = try Connection("Library/Application support/db.sqlite3")
         }catch {
@@ -53,15 +54,21 @@ class Building : NSObject{
         let latitude = Expression<Double>("latitude")
         let longitude = Expression<Double>("longitude")
         let classrooms = Expression<String>("classrooms")
-        let stmt = try db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='Buildings'")
-        for row in stmt {
-            for (index, name) in stmt.columnNames.enumerate() {
-                NSLog("Table \"Building\" already exists, proceeding...")
-                return true
-            }
-        }
         do {
-            try db.run(users.create(ifNotExists: true) { t in
+            let stmt = try db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='Buildings'")
+            for row in stmt {
+                for (index, name) in stmt.columnNames.enumerated() {
+                    NSLog("Table \"Building\" already exists, proceeding...")
+                    return true
+                }
+            }
+        } catch {
+            NSLog("stmt Error")
+            return false
+        }
+        let buildings = Table("Buildings")
+        do {
+            try db.run(buildings.create(ifNotExists: true) { t in
                 t.column(buildingCode, primaryKey: true) //     "id" INTEGER PRIMARY KEY NOT NULL,
                 t.column(buildingName)  //     "email" TEXT UNIQUE NOT NULL,
                 t.column(latitude)
@@ -71,6 +78,7 @@ class Building : NSObject{
         }catch {
             return false
         }
+        
         var results : [Building]
         if let backendless = Backendless.sharedInstance() {
             if let dataStore = backendless.data.of(Building.ofClass()) {
@@ -88,7 +96,7 @@ class Building : NSObject{
         }
         for b in results {
             do {
-                try db.run(users.insert(or: .replace,
+                try db.run(buildings.insert(or: .replace,
                     buildingCode <- b.buildingCode,
                     buildingName <- b.buildingName,
                     latitude <- b.latitude,
@@ -108,7 +116,7 @@ class Building : NSObject{
             let buildingCode = Expression<String>("buildingCode")
             let buildings = Table("Buildings")
             for building in try db.prepare(buildings.filter(buildingCode == ID)) {
-                    let classroomIDS = CSVToArray(CSV: building[])
+                    let classroomIDS = CSVToArray(CSV: building[Expression<String>("classrooms")])
                     
                     var crooms = [Classroom]()
                     
