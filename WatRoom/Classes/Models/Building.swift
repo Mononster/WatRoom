@@ -16,7 +16,7 @@ class Building : NSObject{
     let buildingName: String
     let latitude: Double
     let longitude: Double
-    let classrooms: [Classroom]
+    let classrooms: String
 
     init(buildingCode: String, buildingName: String, latitude: Double, longitude: Double, classrooms: [Classroom]) {
         self.buildingCode = buildingCode
@@ -40,6 +40,19 @@ class Building : NSObject{
         self.latitude = final.latitude
         self.longitude = final.longitude
         self.classrooms = final.classrooms
+    }
+    
+    func getClassrooms() -> [Classroom] {
+        
+        let classroomIDS = CSVToArray(CSV: self.classrooms)
+        
+        var crooms = [Classroom]()
+        
+        for cID in classroomIDS {
+            crooms.append(Classroom(ID: cID))
+        }
+        
+        return crooms
     }
     
     static func initTable() -> Bool {
@@ -116,19 +129,11 @@ class Building : NSObject{
             let buildingCode = Expression<String>("buildingCode")
             let buildings = Table("Buildings")
             for building in try db.prepare(buildings.filter(buildingCode == ID)) {
-                    let classroomIDS = CSVToArray(CSV: building[Expression<String>("classrooms")])
-                    
-                    var crooms = [Classroom]()
-                    
-                    for cID in classroomIDS {
-                        crooms.append(Classroom(ID: cID))
-                    }
-                    
                     return Building(buildingCode: ID,
                                     buildingName: building[Expression<String>("buildingName")],
                                     latitude: building[Expression<Double>("latitude")],
                                     longitude: building[Expression<Double>("longitude")],
-                                    classrooms: crooms)
+                                    classrooms: building[Expression<Double>("longitude")])
             }
         }catch let error as NSError{
             NSLog(error.description)
