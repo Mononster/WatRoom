@@ -1,6 +1,7 @@
 package com.uw_room_finder.timers;
 
 import java.util.List;
+import java.util.HashMap;
 
 import com.backendless.Backendless;
 import com.backendless.logging.Logger;
@@ -28,7 +29,12 @@ public class UwTimer extends com.backendless.servercode.extension.TimerExtender
 		  UWaterlooAPI api = new UWaterlooAPI("9df5b8e01a6f19d11a1d7ddd00562da7");
 		  List<BuildingsDetail> buildings = api.getBuildingsAPI().getBuildings().getData();
 		  for(BuildingsDetail b : buildings) {
-			  logger.debug(b.getBuildingName());
+			  Map hashmap = new HashMap<String, Object>();
+			  hashmap.add("buildingCode", b.buildingCode);
+			  hashmap.add("buildingName", b.buildingName);
+			  hashmap.add("latitude", b.latitude);
+			  hashmap.add("longitude", b.longitude);
+			  Backendless.data.of("buildings").save(hashmap);
 		  }
 	  }catch (Exception e) {
 		  logger.error("exception", e);
