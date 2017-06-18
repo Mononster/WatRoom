@@ -64,7 +64,7 @@ extension ClassroomsListVC {
         searchBar.delegate = self
         searchBar.showsCancelButton = true
         searchBar.searchBarStyle = .minimal
-        searchBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "searchbar_indicator"), style: .plain, target: self, action: #selector(showSearchBar))
+        searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_search"), style: .plain, target: self, action: #selector(showSearchBar))
         navigationItem.rightBarButtonItem = searchBarButtonItem
     }
 }

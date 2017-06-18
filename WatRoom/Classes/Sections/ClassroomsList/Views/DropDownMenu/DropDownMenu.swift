@@ -92,7 +92,7 @@ extension SortDropDownTable{
         
         let categoryHeight: CGFloat = self.menuBarHeight
         for i in 0..<numOfCategory {
-            let categoryButton = NavigationButton.navigationButton(title: titleData[i], imageName: "triangle_down")
+            let categoryButton = NavigationButton.navigationButton(title: titleData[i], imageName: "icon_down_arrow")
             categoryButton.tag = i
             categoryButton.frame = CGRect(x: CGFloat(i) * categoryWidth, y: 0, width : categoryWidth, height : categoryHeight)
             categoryButton.arrowHeight.constant = 8
