@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 extension String {
     
@@ -17,6 +18,29 @@ extension String {
     
     func localizedWithArgs(_ arguments: CVarArg...) -> String {
         return String(format: localized(), arguments)
+    }
+    
+    var coordinates: CLLocationCoordinate2D {
+        
+        func locationDegree(fromString location: String) -> CLLocationDegrees? {
+            
+            guard let locationDouble = Double(location) else {
+                var temp = location
+                temp.remove(at: location.startIndex)
+                
+                return Double(temp) ?? 0 * -1
+            }
+            
+            return locationDouble
+        }
+        
+        let locationComponents = self.components(separatedBy: ",")
+        
+        guard let latString = locationComponents.first, let longString = locationComponents.last, let lat = locationDegree(fromString: latString), let long = locationDegree(fromString: longString) else {
+            return CLLocationCoordinate2D()
+        }
+        
+        return CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
 }
 
@@ -42,4 +66,19 @@ extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
+
+extension Int {
+    
+    var bool: Bool {
+        return self >= 1
+    }
+}
+
+extension MKMapView {
+    
+    func removeAllAnnotations() {
+        self.removeAnnotations(self.annotations)
+    }
+}
+
 

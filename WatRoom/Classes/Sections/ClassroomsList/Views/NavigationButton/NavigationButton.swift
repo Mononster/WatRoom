@@ -20,6 +20,12 @@ class NavigationButton: UIButton {
     @IBOutlet weak var arrowCenterYCons: NSLayoutConstraint!
     @IBOutlet weak var titleCenterYCons: NSLayoutConstraint!
     
+    var titleText: String? {
+        didSet {
+            title.text = titleText
+        }
+    }
+    
     class func navigationButton(title: String, imageName : String, titleColor : UIColor = UIColor.black) -> NavigationButton {
         
         let nib = UINib(nibName: "NavigationButton", bundle: nil)

@@ -19,6 +19,11 @@ protocol DropDownMenuDataSource: UITableViewDataSource {
     func tableSelectionData() -> [[(String, String)]]
 }
 
+protocol MenuDelegate: class {
+    func didUpdateFilters()
+    func shouldShowMapView(show: Bool)
+}
+
 class SortDropDownTable: UIView {
     
     var tableView: UITableView!
@@ -34,29 +39,45 @@ class SortDropDownTable: UIView {
     var mapListButtonWidth: CGFloat = 50
     var btnToScreenMargin: CGFloat = 15
     var menuBarHeight: CGFloat = 40
-    var mapListViewButton: NavigationButton!
     
-    // true indicates displaying list view
-    // false indicates displaying map view.
-    var isListViewStage = true
+    fileprivate var isShowingMap = false
+    fileprivate var mapButton: NavigationButton?
     
-    var titleData = ["Building", "Distance", "Time"]
-    var dataCategory = [[("Sort by date", "Sort by date"),
-                         ("Sort by price from high to low", "Price high to low"),
-                         ("Sort by price from low to high", "Price low to high")],
-                        [("Within 1km from school" , "Within 1km"),
-                         ("Within 2km from school" , "Within 2km"),
-                         ("Within 3km from school" , "Within 3km"),
-                         ("Within 5km from school" , "Within 5km")]]
+    weak var menuDelegate: MenuDelegate?
+    
+    fileprivate var titleData = ["Building", "Distance", "Time", "Map"]
+    
+    fileprivate(set) var menuData: [[String]] = [[]]
+    
+    enum MenuCategory: Int {
+        case building
+        case distance
+        case time
+        case map
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.menuBarHeight = frame.height
+        menuBarHeight = frame.height
+        configureMenuData()
         setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureMenuData() {
+        let buildings = ClassroomsManager.sharedInstance.buildings.map { $0.abbreviation + " - " + $0.name }
+        let distance = ["Less than 50 metres", "Less than 100 metres", "Less than 500 metres"]
+        
+        let buildingsFilter = Array(repeating: true, count: buildings.count)
+        let distanceFilter = Array(repeating: false, count: distance.count)
+        
+        menuData = [buildings, distance]
+        
+        ClassroomsManager.sharedInstance.buildingsFilter = buildingsFilter
+        ClassroomsManager.sharedInstance.distanceFilter = distanceFilter
     }
     
 }
@@ -81,22 +102,17 @@ extension SortDropDownTable{
         menuBarContainer.backgroundColor = UIColor.white
         
         let count: CGFloat = CGFloat(numOfCategory)
-        let separatorWidth: CGFloat = 1
         // save mapListButtonWidth
-        let categoryTotalWidth: CGFloat = self.frame.width - mapListButtonWidth - btnToScreenMargin
-        var categoryWidth: CGFloat = categoryTotalWidth / count - count * separatorWidth
-        
-        if count == 0 {
-            categoryWidth = 0
-        }
+        let categoryTotalWidth: CGFloat = self.frame.width - btnToScreenMargin
+        let categoryWidth: CGFloat = categoryTotalWidth / count + 5
         
         let categoryHeight: CGFloat = self.menuBarHeight
         for i in 0..<numOfCategory {
             let categoryButton = NavigationButton.navigationButton(title: titleData[i], imageName: "icon_down_arrow")
             categoryButton.tag = i
             categoryButton.frame = CGRect(x: CGFloat(i) * categoryWidth, y: 0, width : categoryWidth, height : categoryHeight)
-            categoryButton.arrowHeight.constant = 8
-            categoryButton.arrowWidth.constant = 8
+            categoryButton.arrowHeight.constant = i == MenuCategory.map.rawValue ? 0 : 8
+            categoryButton.arrowWidth.constant = i == MenuCategory.map.rawValue ? 0 : 8
             
             categoryButton.title.font = UIFont.systemFont(ofSize: 15)
             categoryButton.title.textColor = .gray
@@ -106,21 +122,11 @@ extension SortDropDownTable{
             menuBarContainer.addSubview(categoryButton)
             
             categoryButtons.append(categoryButton)
+            
+            if i == MenuCategory.map.rawValue {
+                mapButton = categoryButton
+            }
         }
-        
-        // setup map list view
-        
-        mapListViewButton = NavigationButton.navigationButton(title: "Map", imageName: "mapView_indicator")
-        mapListViewButton.frame = CGRect(x: CGFloat(numOfCategory) * categoryWidth, y: 0, width: mapListButtonWidth, height: categoryHeight )
-        mapListViewButton.title.font = UIFont.systemFont(ofSize: 15)
-        mapListViewButton.title.textColor = .gray
-        mapListViewButton.arrowHeight.constant = 20
-        mapListViewButton.arrowWidth.constant = 18
-        mapListViewButton.separator.isHidden = true
-        
-        mapListViewButton.addTarget(self, action: #selector(mapListViewButtonTapped(_ :)), for: .touchUpInside)
-        
-        menuBarContainer.addSubview(mapListViewButton!)
         
         self.addSubview(menuBarContainer!)
     }
@@ -146,8 +152,6 @@ extension SortDropDownTable{
         tableView.register(UINib.init(nibName: "DropDownMenuTimeCell", bundle: nil), forCellReuseIdentifier: "DropDownMenuTimeCell")
     }
     
-    
-    
     func cleanUI(){
         
         UIView.animate(withDuration: 0.1, animations: {
@@ -170,18 +174,15 @@ extension SortDropDownTable{
         self.categoryButtons[self.currentSelectedIndex].updateArrowDirection()
         
     }
-    
-    
 }
 
 extension SortDropDownTable{
     
     @objc func backgroundViewTapped() {
-        
         present = !present
-        
         cleanUI()
         
+        menuDelegate?.didUpdateFilters()
     }
     
     func hideViewWithoutAnimation() {
@@ -196,26 +197,12 @@ extension SortDropDownTable{
         }
     }
     
-    @objc func mapListViewButtonTapped(_ sender: NavigationButton) {
-        isListViewStage = !isListViewStage
-        
-        self.mapListViewButton.isEnabled = false
-        if isListViewStage{
-            sender.title.text = "Map"
-            sender.arrow.image = #imageLiteral(resourceName: "mapView_indicator")
-//            self.sortTableDelegate?.updateListMapViewState(true){
-//                self.mapListViewButton?.isEnabled = true
-//            }
-        }else{
-            sender.title.text = "List"
-            sender.arrow.image = #imageLiteral(resourceName: "listView_indicator")
-//            self.sortTableDelegate?.updateListMapViewState(false){
-//                self.mapListViewButton?.isEnabled = true
-//            }
-        }
-    }
-    
     @objc func menuButtonTapped(_ sender: NavigationButton) {
+        guard sender.tag != MenuCategory.map.rawValue else {
+            toggleMapView()
+            return
+        }
+        
         let prevSelectedIndex = currentSelectedIndex
         currentSelectedIndex = sender.tag
         tableView.reloadData()
@@ -271,8 +258,16 @@ extension SortDropDownTable{
             categoryButtons[currentSelectedIndex].updateArrowDirection()
         } else {
             cleanUI()
+            menuDelegate?.didUpdateFilters()
         }
         
+    }
+    
+    private func toggleMapView() {
+        isShowingMap = !isShowingMap
+        menuDelegate?.shouldShowMapView(show: isShowingMap)
+        
+        mapButton?.titleText = isShowingMap ? "List" : "Map"
     }
 }
 
@@ -290,75 +285,66 @@ extension SortDropDownTable: UITableViewDataSource {
             return 1
         }
         
-        return dataCategory[currentSelectedIndex].count
+        return menuData[currentSelectedIndex].count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if currentSelectedIndex == 2 {
-            return 300
-        }
-        
-        if dataCategory[currentSelectedIndex].count > 4{
-            return 41
-        }
+        guard currentSelectedIndex != MenuCategory.time.rawValue else { return 280 }
         
         return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if currentSelectedIndex == 2 {
+        guard currentSelectedIndex != MenuCategory.time.rawValue else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DropDownMenuTimeCell", for: indexPath) as! DropDownMenuTimeCell
             return cell
         }
         
+        let filterData = currentSelectedIndex == MenuCategory.building.rawValue ?
+            ClassroomsManager.sharedInstance.buildingsFilter : ClassroomsManager.sharedInstance.distanceFilter
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DropDownMenuCell", for: indexPath) as! DropDownMenuCell
+        cell.selectionStyle = .none
+        cell.title.text = menuData[currentSelectedIndex][indexPath.row]
+        cell.separator.isHidden = indexPath.row == 0 ? true : false
         
-        let infoDict = dataCategory[currentSelectedIndex]
-        
-        cell.title.text = infoDict[indexPath.row].0
-        cell.displayText = infoDict[indexPath.row].1
-        
-        if indexPath.row == 0{
-            cell.separator.isHidden = true
-        }
-        
-        let button = categoryButtons[currentSelectedIndex]
-        
-        cell.accessoryType = button.title.text == cell.displayText ? .checkmark : .none
+        cell.accessoryType = filterData[indexPath.row] ? .checkmark : .none
         
         return cell
         
     }
-    
 }
 
 extension SortDropDownTable: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if currentSelectedIndex == 2 {
-            return
-        }
+        guard currentSelectedIndex != MenuCategory.time.rawValue else { return }
         
         let cell = tableView.cellForRow(at: indexPath) as? DropDownMenuCell
         
-        let button = categoryButtons[currentSelectedIndex]
+        var filterData = currentSelectedIndex == MenuCategory.building.rawValue ?
+            ClassroomsManager.sharedInstance.buildingsFilter : ClassroomsManager.sharedInstance.distanceFilter
         
-        button.title.text = cell?.displayText
+        let isSelected = filterData[indexPath.row]
         
-        present = !present
+        if currentSelectedIndex == MenuCategory.building.rawValue {
+            cell?.accessoryType = isSelected ? .none : .checkmark
+            filterData[indexPath.row] = !isSelected
+        } else {
+            
+            for (index, _) in filterData.enumerated() {
+                filterData[index] = index == indexPath.row ? !isSelected : false
+            }
+            
+            tableView.reloadData()
+        }
         
-        cleanUI()
-        
-//        if let delegate = self.sortTableDelegate  {
-//            let row = indexPath.row
-//            delegate.updateInfoBySectionAndRow(section: currentSelectedIndex, row: row)
-//        }
-        
+        if currentSelectedIndex == MenuCategory.building.rawValue {
+            ClassroomsManager.sharedInstance.buildingsFilter = filterData
+        } else {
+            ClassroomsManager.sharedInstance.distanceFilter = filterData
+        }
     }
     
 }
-

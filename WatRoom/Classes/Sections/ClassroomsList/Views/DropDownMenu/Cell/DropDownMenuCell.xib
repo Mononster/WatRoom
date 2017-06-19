@@ -26,7 +26,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by posted date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbb-8v-L01">
-                        <rect key="frame" x="18" y="11" width="152" height="21"/>
+                        <rect key="frame" x="16" y="11" width="257" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -34,8 +34,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Rbb-8v-L01" firstAttribute="centerY" secondItem="9JR-FZ-b72" secondAttribute="centerY" id="93v-36-HNe"/>
+                    <constraint firstAttribute="trailing" secondItem="Rbb-8v-L01" secondAttribute="trailing" constant="8" id="RY7-c1-1pi"/>
                     <constraint firstItem="dlR-gj-v4c" firstAttribute="top" secondItem="9JR-FZ-b72" secondAttribute="top" id="SKe-cJ-LdR"/>
-                    <constraint firstItem="Rbb-8v-L01" firstAttribute="leading" secondItem="9JR-FZ-b72" secondAttribute="leadingMargin" constant="10" id="fBe-t2-yzU"/>
+                    <constraint firstItem="Rbb-8v-L01" firstAttribute="leading" secondItem="9JR-FZ-b72" secondAttribute="leadingMargin" constant="8" id="fBe-t2-yzU"/>
                     <constraint firstItem="dlR-gj-v4c" firstAttribute="leading" secondItem="9JR-FZ-b72" secondAttribute="leading" constant="20" id="nOg-jf-gIc"/>
                 </constraints>
             </tableViewCellContentView>

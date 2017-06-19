@@ -12,6 +12,8 @@
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
 		87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */; };
 		E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */; };
+		F44495B81EF6D780004B4778 /* ClassroomsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44495B71EF6D780004B4778 /* ClassroomsListCell.swift */; };
+		F44495BA1EF6DACB004B4778 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44495B91EF6DACB004B4778 /* MockData.swift */; };
 		F45307C81EF5FB57001DF6D0 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307C61EF5FB57001DF6D0 /* NavigationButton.swift */; };
 		F45307C91EF5FB57001DF6D0 /* NavigationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45307C71EF5FB57001DF6D0 /* NavigationButton.xib */; };
 		F45307CC1EF5FB60001DF6D0 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307CA1EF5FB60001DF6D0 /* DropDownMenu.swift */; };
@@ -28,6 +30,8 @@
 		F45307E11EF5FB7C001DF6D0 /* RangeCircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307DC1EF5FB7C001DF6D0 /* RangeCircularSlider.swift */; };
 		F45307E41EF5FBCE001DF6D0 /* Date+TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E21EF5FBCE001DF6D0 /* Date+TimeFormat.swift */; };
 		F45307E51EF5FBCE001DF6D0 /* Date+Weekdays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E31EF5FBCE001DF6D0 /* Date+Weekdays.swift */; };
+		F45307E71EF60595001DF6D0 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E61EF60595001DF6D0 /* Day.swift */; };
+		F45307E91EF60E1D001DF6D0 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E81EF60E1D001DF6D0 /* Feature.swift */; };
 		F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
 		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
@@ -55,6 +59,8 @@
 		87C41CE31ED896B5001E90F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C41CE61ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C41CE81ED896B5001E90F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F44495B71EF6D780004B4778 /* ClassroomsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsListCell.swift; sourceTree = "<group>"; };
+		F44495B91EF6DACB004B4778 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		F45307C61EF5FB57001DF6D0 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		F45307C71EF5FB57001DF6D0 /* NavigationButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationButton.xib; sourceTree = "<group>"; };
 		F45307CA1EF5FB60001DF6D0 /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 		F45307DC1EF5FB7C001DF6D0 /* RangeCircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeCircularSlider.swift; sourceTree = "<group>"; };
 		F45307E21EF5FBCE001DF6D0 /* Date+TimeFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimeFormat.swift"; sourceTree = "<group>"; };
 		F45307E31EF5FBCE001DF6D0 /* Date+Weekdays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Weekdays.swift"; sourceTree = "<group>"; };
+		F45307E61EF60595001DF6D0 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		F45307E81EF60E1D001DF6D0 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrowdLevelVC.swift; path = CrowdLevel/CrowdLevelVC.swift; sourceTree = "<group>"; };
 		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
@@ -161,6 +169,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F44495B61EF6D731004B4778 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F44495B71EF6D780004B4778 /* ClassroomsListCell.swift */,
+			);
+			name = "Table View Cells";
+			path = "Table VIew Cells";
+			sourceTree = "<group>";
+		};
 		F45307C01EF5FACD001DF6D0 /* CircularSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +252,7 @@
 		F4DE36291EE1E31000F9D89E /* DB Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F44495B91EF6DACB004B4778 /* MockData.swift */,
 			);
 			path = "DB Networking";
 			sourceTree = "<group>";
@@ -244,6 +262,8 @@
 			children = (
 				F4DE364F1EE67BEA00F9D89E /* Building.swift */,
 				F4DE364D1EE67BD400F9D89E /* Classroom.swift */,
+				F45307E61EF60595001DF6D0 /* Day.swift */,
+				F45307E81EF60E1D001DF6D0 /* Feature.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +314,7 @@
 		F4DE365D1EE6843100F9D89E /* ClassroomsList */ = {
 			isa = PBXGroup;
 			children = (
+				F44495B61EF6D731004B4778 /* Table View Cells */,
 				879E467D1EF31B1400587BE9 /* Views */,
 				F4DE36601EE6847C00F9D89E /* View Controllers */,
 			);
@@ -466,12 +487,16 @@
 				F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */,
 				F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */,
 				F45307D21EF5FB69001DF6D0 /* DropDownMenuCell.swift in Sources */,
+				F44495BA1EF6DACB004B4778 /* MockData.swift in Sources */,
 				F4DE365B1EE67E4D00F9D89E /* ClassroomCoordinator.swift in Sources */,
 				F45307C81EF5FB57001DF6D0 /* NavigationButton.swift in Sources */,
 				F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */,
 				F45307DF1EF5FB7C001DF6D0 /* CircularSliderHelper.swift in Sources */,
 				F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */,
 				F45307DD1EF5FB7C001DF6D0 /* CircularSlider.swift in Sources */,
+				F45307E71EF60595001DF6D0 /* Day.swift in Sources */,
+				F44495B81EF6D780004B4778 /* ClassroomsListCell.swift in Sources */,
+				F45307E91EF60E1D001DF6D0 /* Feature.swift in Sources */,
 				F45307D41EF5FB69001DF6D0 /* DropDownMenuTimeCell.swift in Sources */,
 				F45307E51EF5FBCE001DF6D0 /* Date+Weekdays.swift in Sources */,
 				F45307CC1EF5FB60001DF6D0 /* DropDownMenu.swift in Sources */,

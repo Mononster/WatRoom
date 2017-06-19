@@ -11,7 +11,13 @@ import Foundation
 
 struct Classroom {
     
-    let roomNumber: Int
+    let roomNumber: String
+    let availability: [Day: [Bool]]
+    let features: [Feature]
     
-    
+    init(room: String, availability: [Day: [Bool]], features: [Feature] = []) {
+        self.roomNumber = room
+        self.availability = availability
+        self.features = features
+    }
 }

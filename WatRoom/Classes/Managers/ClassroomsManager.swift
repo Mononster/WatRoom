@@ -16,7 +16,8 @@ class ClassroomsManager {
         return classroomsManager
     }
     
-    private(set) var buildings: [Building] = []
+    let buildings: [Building] = MockData.generateBuildings()
     
-    
+    var buildingsFilter: [Bool] = []
+    var distanceFilter: [Bool] = []
 }

@@ -9,12 +9,32 @@
 import Foundation
 import MapKit
 
-let backendless = Backendless.sharedInstance()
-
 struct Building {
     
     let name: String
-    let location: CLLocation
-    
+    let abbreviation: String
+    let locationCoordinate: CLLocationCoordinate2D
     let classrooms: [Classroom]
+    
+    init(name: String, abbreviation: String, location: String, classrooms: [Classroom] = []) {
+        
+        self.name = name
+        self.abbreviation = abbreviation
+        self.locationCoordinate = location.coordinates
+        self.classrooms = classrooms
+    }
+}
+
+final class BuildingAnnotation: NSObject, MKAnnotation {
+    
+    var title: String?
+    var subtitle: String?
+    var coordinate: CLLocationCoordinate2D
+    
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+        
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
+    }
 }
