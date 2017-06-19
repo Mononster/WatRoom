@@ -21,7 +21,7 @@ protocol DropDownMenuDataSource: UITableViewDataSource {
 
 protocol MenuDelegate: class {
     func didUpdateFilters()
-    func shouldShowMapView(show: Bool)
+    func updateListMapViewState(_ isListView: Bool, completion: @escaping () -> ())
 }
 
 class SortDropDownTable: UIView {
@@ -82,7 +82,7 @@ class SortDropDownTable: UIView {
     
 }
 
-extension SortDropDownTable{
+extension SortDropDownTable {
     
     func setupUI() {
         self.backgroundColor = UIColor.clear
@@ -104,15 +104,18 @@ extension SortDropDownTable{
         let count: CGFloat = CGFloat(numOfCategory)
         // save mapListButtonWidth
         let categoryTotalWidth: CGFloat = self.frame.width - btnToScreenMargin
-        let categoryWidth: CGFloat = categoryTotalWidth / count + 5
+        let categoryWidth: CGFloat = categoryTotalWidth / count + 15
         
         let categoryHeight: CGFloat = self.menuBarHeight
         for i in 0..<numOfCategory {
             let categoryButton = NavigationButton.navigationButton(title: titleData[i], imageName: "icon_down_arrow")
             categoryButton.tag = i
-            categoryButton.frame = CGRect(x: CGFloat(i) * categoryWidth, y: 0, width : categoryWidth, height : categoryHeight)
-            categoryButton.arrowHeight.constant = i == MenuCategory.map.rawValue ? 0 : 8
-            categoryButton.arrowWidth.constant = i == MenuCategory.map.rawValue ? 0 : 8
+            
+            let width = i == MenuCategory.map.rawValue ? 60 : categoryWidth
+            
+            categoryButton.frame = CGRect(x: CGFloat(i) * categoryWidth, y: 0, width: width, height : categoryHeight)
+            categoryButton.arrowHeight.constant = i == MenuCategory.map.rawValue ? 20 : 8
+            categoryButton.arrowWidth.constant = i == MenuCategory.map.rawValue ? 18 : 8
             
             categoryButton.title.font = UIFont.systemFont(ofSize: 15)
             categoryButton.title.textColor = .gray
@@ -125,6 +128,8 @@ extension SortDropDownTable{
             
             if i == MenuCategory.map.rawValue {
                 mapButton = categoryButton
+                mapButton?.arrow.image = #imageLiteral(resourceName: "icon_map")
+                mapButton?.separator.isHidden = true
             }
         }
         
@@ -199,7 +204,7 @@ extension SortDropDownTable{
     
     @objc func menuButtonTapped(_ sender: NavigationButton) {
         guard sender.tag != MenuCategory.map.rawValue else {
-            toggleMapView()
+            mapListViewButtonTapped(sender)
             return
         }
         
@@ -263,11 +268,24 @@ extension SortDropDownTable{
         
     }
     
-    private func toggleMapView() {
+    func mapListViewButtonTapped(_ sender: NavigationButton ){
         isShowingMap = !isShowingMap
-        menuDelegate?.shouldShowMapView(show: isShowingMap)
         
-        mapButton?.titleText = isShowingMap ? "List" : "Map"
+        self.mapButton?.isEnabled = false
+        if !isShowingMap {
+            sender.title.text = "Map"
+            sender.arrow.image = #imageLiteral(resourceName: "icon_map")
+            
+            self.menuDelegate?.updateListMapViewState(true) {
+                self.mapButton?.isEnabled = true
+            }
+        } else {
+            sender.title.text = "List"
+            sender.arrow.image = #imageLiteral(resourceName: "icon_list")
+            self.menuDelegate?.updateListMapViewState(false) {
+                self.mapButton?.isEnabled = true
+            }
+        }
     }
 }
 

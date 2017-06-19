@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         let navVC = UINavigationController()
-        navVC.navigationBar.tintColor = UIColor.gray
+        navVC.navigationBar.isTranslucent = false
+        navVC.navigationBar.tintColor = UIColor.darkGray
         window?.rootViewController = navVC
         
         if let root = window?.rootViewController as? UINavigationController {
