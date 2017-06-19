@@ -16,11 +16,11 @@ struct Building {
     let locationCoordinate: CLLocationCoordinate2D
     let classrooms: [Classroom]
     
-    init(name: String, abbreviation: String, location: String, classrooms: [Classroom] = []) {
+    init(name: String, abbreviation: String, location: CLLocationCoordinate2D, classrooms: [Classroom] = []) {
         
         self.name = name
         self.abbreviation = abbreviation
-        self.locationCoordinate = location.coordinates
+        self.locationCoordinate = location
         self.classrooms = classrooms
     }
 }

@@ -20,4 +20,7 @@ class ClassroomsManager {
     
     var buildingsFilter: [Bool] = []
     var distanceFilter: [Bool] = []
+    
+    var dayFilter = Day(name: .monday)
+    var timeFilter: (start: Date, end: Date) = (Date(), Date())
 }

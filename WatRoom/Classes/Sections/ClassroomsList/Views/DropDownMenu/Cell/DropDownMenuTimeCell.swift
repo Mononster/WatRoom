@@ -15,12 +15,6 @@ class DropDownMenuTimeCell: UITableViewCell {
     @IBOutlet weak var startingTime: UILabel!
     @IBOutlet weak var endingTime: UILabel!
     
-    @IBOutlet weak var applyBtn: UIButton! {
-        didSet {
-            applyBtn.layer.cornerRadius = 4
-        }
-    }
-    
     @IBAction func updateText(_ sender: Any) {
         
         let dateFormatter = DateFormatter()
@@ -37,11 +31,13 @@ class DropDownMenuTimeCell: UITableViewCell {
         let end = TimeInterval(slider.endPointValue)
         let endDate = Date(timeIntervalSinceReferenceDate: end)
         endingTime.text = dateFormatter.string(from: endDate)
+        
+        ClassroomsManager.sharedInstance.timeFilter = (startDate, endDate)
     }
     
     func adjustValue(value: inout CGFloat) {
         let minutes = value / 60
-        let adjustedMinutes =  ceil(minutes / 5.0) * 5
+        let adjustedMinutes =  ceil(minutes / 10.0) * 10
         value = adjustedMinutes * 60
     }
     
@@ -93,8 +89,14 @@ class DropDownMenuTimeCell: UITableViewCell {
         
         let dateControl = DateControl(titles: data,
                                       frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
-        //dateControl.delegate = self
+        dateControl.delegate = self
         self.addSubview(dateControl)
     }
+}
+
+extension DropDownMenuTimeCell: DateControlActionDelegate {
     
+    func tappedMenu(page: Int) {
+        ClassroomsManager.sharedInstance.dayFilter = Day.atIndex(page)
+    }
 }

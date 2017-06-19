@@ -45,6 +45,8 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
         
         buildings = ClassroomsManager.sharedInstance.buildings
         reloadData()
+        
+        didUpdateFilters()
     }
     
     private func addCrowdLevelButtons() {
@@ -65,7 +67,16 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
         guard let map = mapView else { return }
         map.showAnnotations(map.annotations, animated: true)
     }
+}
+
+extension ClassroomsListVC: UISearchBarDelegate {
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        hideSearchBar()
+    }
+}
+
+extension ClassroomsListVC {
     
     fileprivate func configureMapView() {
         requestLocationAccess()
@@ -98,8 +109,8 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
             locationManager.requestWhenInUseAuthorization()
         }
     }
-    
 }
+
 
 
 extension ClassroomsListVC {
@@ -141,7 +152,13 @@ extension ClassroomsListVC: MenuDelegate {
 
         for (index, building) in ClassroomsManager.sharedInstance.buildings.enumerated() {
             guard ClassroomsManager.sharedInstance.buildingsFilter[index] != false else { continue }
-            filteredBuildings.append(building)
+            
+            let filteredBuilding = Building(name: building.name, abbreviation: building.abbreviation,
+                                            location: building.locationCoordinate,
+                                            classrooms: timeFilterClassrooms(forBuilding: building))
+            
+            guard filteredBuilding.classrooms.count > 0 else { continue }
+            filteredBuildings.append(filteredBuilding)
         }
         
         buildings = filteredBuildings
@@ -167,6 +184,47 @@ extension ClassroomsListVC: MenuDelegate {
         }
         
     }
+    
+    func timeFilterClassrooms(forBuilding building: Building) -> [Classroom] {
+        guard ClassroomsManager.sharedInstance.dayFilter != Day(name: .saturday)
+            && ClassroomsManager.sharedInstance.dayFilter != Day(name: .sunday) else { return [] }
+        
+        let tenMinutes = 60 * 10
+        
+        let minIndex = 7 * 60 * 60 / tenMinutes
+        let maxIndex = 22 * 60 * 60 / tenMinutes
+        
+        let day = ClassroomsManager.sharedInstance.dayFilter
+        
+        let startIndex = Int(ClassroomsManager.sharedInstance.timeFilter.start.timeIntervalSinceReferenceDate) / tenMinutes
+        let endIndex = Int(ClassroomsManager.sharedInstance.timeFilter.end.timeIntervalSinceReferenceDate) / tenMinutes
+        
+        guard startIndex >= minIndex && endIndex <= maxIndex else { return [] }
+        
+        var filteredClassrooms: [Classroom] = []
+        
+        for classroom in building.classrooms {
+            guard let availability = classroom.availability[day], availability.count == 90 else { continue }
+            
+            let rangeStart = startIndex - minIndex
+            let rangeEnd = endIndex - minIndex - 1
+            
+            guard rangeStart >= 0 && rangeEnd < availability.count else { continue }
+            let filteredAvailability = Array(availability[rangeStart...rangeEnd])
+            
+            guard filteredAvailability.count > 0 else { continue }
+            
+            let shouldShowClassroom = filteredAvailability.reduce(0, { (result, available) in
+                return available ? result + 1 : result
+            }) > 3
+            
+            if shouldShowClassroom {
+                filteredClassrooms.append(classroom)
+            }
+        }
+        
+        return filteredClassrooms
+    }
 }
 
 extension ClassroomsListVC {
@@ -189,13 +247,6 @@ extension ClassroomsListVC {
             self?.navigationItem.titleView = self?.titleView
             self?.titleView?.alpha = 1
             }, completion: nil)
-    }
-}
-
-extension ClassroomsListVC: UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        hideSearchBar()
     }
 }
 
@@ -242,5 +293,3 @@ extension ClassroomsListVC: UITableViewDataSource {
         return cell
     }
 }
-
-

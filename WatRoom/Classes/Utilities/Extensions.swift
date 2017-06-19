@@ -81,4 +81,11 @@ extension MKMapView {
     }
 }
 
+extension CLLocationCoordinate2D {
+    
+    func toString() -> String {
+        return String(self.latitude) + "," + String(self.longitude)
+    }
+}
+
 

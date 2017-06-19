@@ -315,7 +315,4 @@ open class CircularSlider: UIControl {
         }
         return newValue
     }
-    
-    
-    
 }

@@ -32,6 +32,27 @@ struct Day {
         self.name = name
     }
     
+    static func atIndex(_ index: Int) -> Day {
+        switch index {
+        case 0:
+            return Day(name: .monday)
+        case 1:
+            return Day(name: .tuesday)
+        case 2:
+            return Day(name: .wednesday)
+        case 3:
+            return Day(name: .thursday)
+        case 4:
+            return Day(name: .friday)
+        case 5:
+            return Day(name: .saturday)
+        case 6:
+            return Day(name: .sunday)
+        default:
+            return Day(name: .monday)
+        }
+    }
+    
 }
 
 extension Day: Equatable {
