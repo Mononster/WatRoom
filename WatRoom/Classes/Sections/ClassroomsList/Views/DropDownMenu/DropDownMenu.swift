@@ -104,7 +104,7 @@ extension SortDropDownTable {
         let count: CGFloat = CGFloat(numOfCategory)
         // save mapListButtonWidth
         let categoryTotalWidth: CGFloat = self.frame.width - btnToScreenMargin
-        let categoryWidth: CGFloat = categoryTotalWidth / count + 15
+        let categoryWidth: CGFloat = categoryTotalWidth / count + 12
         
         let categoryHeight: CGFloat = self.menuBarHeight
         for i in 0..<numOfCategory {
@@ -114,10 +114,10 @@ extension SortDropDownTable {
             let width = i == MenuCategory.map.rawValue ? 60 : categoryWidth
             
             categoryButton.frame = CGRect(x: CGFloat(i) * categoryWidth, y: 0, width: width, height : categoryHeight)
-            categoryButton.arrowHeight.constant = i == MenuCategory.map.rawValue ? 20 : 8
-            categoryButton.arrowWidth.constant = i == MenuCategory.map.rawValue ? 18 : 8
+            categoryButton.arrowHeight.constant = i == MenuCategory.map.rawValue ? 20 : 14
+            categoryButton.arrowWidth.constant = i == MenuCategory.map.rawValue ? 18 : 12
             
-            categoryButton.title.font = UIFont.systemFont(ofSize: 15)
+            categoryButton.title.font = UIFont.init(name: "Avenir-Medium", size: 15)
             categoryButton.title.textColor = .gray
             
             categoryButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
@@ -215,7 +215,7 @@ extension SortDropDownTable{
         
         if currentSelectedIndex == 2 {
             tableView.isScrollEnabled = false
-            tableViewHeight = 320
+            tableViewHeight = 290
         } else {
             tableView.isScrollEnabled = true
         }

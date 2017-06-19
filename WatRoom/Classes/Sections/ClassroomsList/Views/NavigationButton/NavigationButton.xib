@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Used book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="API-CP-cYD">
-                    <rect key="frame" x="28.5" y="2" width="102" height="40"/>
+                    <rect key="frame" x="30.5" y="2" width="98.5" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="VVs-Vd-TUN"/>
                     </constraints>
@@ -24,7 +25,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2va-iu-GWB">
-                    <rect key="frame" x="136.5" y="16.5" width="11" height="13"/>
+                    <rect key="frame" x="135" y="16.5" width="11" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="cGE-YG-N6F"/>
                         <constraint firstAttribute="width" constant="11" id="wgP-P5-HGm"/>
@@ -42,7 +43,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2va-iu-GWB" firstAttribute="leading" secondItem="API-CP-cYD" secondAttribute="trailing" constant="6" id="3Wb-hO-knj"/>
-                <constraint firstItem="2va-iu-GWB" firstAttribute="centerY" secondItem="FZs-Nh-rY6" secondAttribute="centerY" constant="0.5" id="IZ6-x8-PbK"/>
+                <constraint firstItem="2va-iu-GWB" firstAttribute="centerY" secondItem="FZs-Nh-rY6" secondAttribute="centerY" constant="1" id="IZ6-x8-PbK"/>
                 <constraint firstItem="xMi-9F-Pjn" firstAttribute="centerY" secondItem="FZs-Nh-rY6" secondAttribute="centerY" id="LMG-av-UHq"/>
                 <constraint firstItem="API-CP-cYD" firstAttribute="centerY" secondItem="FZs-Nh-rY6" secondAttribute="centerY" id="Qt1-ny-NQw"/>
                 <constraint firstItem="API-CP-cYD" firstAttribute="centerX" secondItem="FZs-Nh-rY6" secondAttribute="centerX" constant="-5" id="YiN-ba-kDC"/>

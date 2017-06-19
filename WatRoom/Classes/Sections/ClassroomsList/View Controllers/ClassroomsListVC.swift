@@ -108,8 +108,8 @@ extension ClassroomsListVC {
         self.view.backgroundColor = UIColor.white
         titleView = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         titleView?.text = "Classrooms"
-        titleView?.textColor = UIColor.gray
-        titleView?.font = UIFont.systemFont(ofSize: 21)
+        titleView?.textColor = UIColor.darkGray
+        titleView?.font = UIFont.init(name: "Avenir-Medium", size: 21)
         navigationItem.titleView = titleView
         setupDropDownMenu()
         setupSearchBar()
@@ -153,14 +153,14 @@ extension ClassroomsListVC: MenuDelegate {
         if isListView {
             // transition from mapview to tableview
             self.view.addSubview(sortDropDownTable!)
-            UIView.transition(from: self.mapView!, to: self.tableView!, duration: 0.8, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: { _ in
+            UIView.transition(from: self.mapView!, to: self.tableView!, duration: 0.8, options: [.transitionFlipFromRight, .showHideTransitionViews, .curveEaseInOut], completion: { _ in
                 completion()
             })
             
         } else {
             // transition from tableView to mapView.
             self.view.addSubview(sortDropDownTable!)
-            UIView.transition(from: self.tableView!, to: self.mapView!, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: { _ in
+            UIView.transition(from: self.tableView!, to: self.mapView!, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .curveEaseInOut], completion: { _ in
                 completion()
             })
             
@@ -218,6 +218,12 @@ extension ClassroomsListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return buildings[section].classrooms.count
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = Palette.themeColor
+        header.textLabel?.font = UIFont.init(name: "Avenir-Medium", size: 15)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

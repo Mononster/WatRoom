@@ -64,7 +64,7 @@ class DateControl: UIView {
             tempView.backgroundColor = UIColor.clear
             tempView.text = titles[i]
             tempView.textColor = Palette.dateControlTextColor
-            let font = UIFont.systemFont(ofSize: 15)
+            let font = UIFont.init(name: "Avenir-Medium", size: 15)
             tempView.font = font
             
             tempView.layer.borderColor = UIColor.clear.cgColor
