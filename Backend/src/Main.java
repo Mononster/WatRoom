@@ -6,10 +6,8 @@ import com.endercrest.uwaterlooapi.UWaterlooAPI;
 import com.endercrest.uwaterlooapi.buildings.models.BuildingsDetail;
 import com.endercrest.uwaterlooapi.courses.models.CourseBase;
 import com.endercrest.uwaterlooapi.courses.models.CourseSchedule;
-import javafx.util.Pair;
 import org.json.JSONObject;
 
-import javax.swing.plaf.ButtonUI;
 import java.util.*;
 
 public class Main {
@@ -43,8 +41,10 @@ public class Main {
             week.add(new HashMap<>());
         }
 
+        System.out.print("Pulling course data...");
         UWaterlooAPI uWaterlooAPI = new UWaterlooAPI("9df5b8e01a6f19d11a1d7ddd00562da7");
         List<CourseBase> courses = uWaterlooAPI.getCoursesAPI().getAllCourses().getData();
+        System.out.print("Building dictionary...");
         for(CourseBase course : courses) {
             String subject = course.getSubject();
             String catalog = course.getCatalogNumber();
@@ -127,7 +127,7 @@ public class Main {
                 }
             }
         }
-
+        System.out.print("Updating building information...");
         for(Building b : Building.buildings) {
             JSONObject buildingJson = new JSONObject();
             buildingJson.put("classrooms", b.rooms);
@@ -138,6 +138,7 @@ public class Main {
             http.put(firebaseURL+b.name+".json", buildingJson.toString());
         }
 
+        System.out.print("Updating schedule...");
         for (int i = 0; i < 5; i++) {
             HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
             String weekday = convertDay(i);
