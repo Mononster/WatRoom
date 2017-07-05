@@ -3,6 +3,7 @@
  */
 
 import com.endercrest.uwaterlooapi.UWaterlooAPI;
+import com.endercrest.uwaterlooapi.buildings.models.BuildingsDetail;
 import com.endercrest.uwaterlooapi.courses.models.CourseBase;
 import com.endercrest.uwaterlooapi.courses.models.CourseSchedule;
 import javafx.util.Pair;
@@ -127,11 +128,15 @@ public class Main {
             }
         }
 
-        JSONObject buildingJson = new JSONObject();
         for(Building b : Building.buildings) {
-            buildingJson.put(b.name, b.rooms);
+            JSONObject buildingJson = new JSONObject();
+            buildingJson.put("classrooms", b.rooms);
+            BuildingsDetail buildingsDetail = uWaterlooAPI.getBuildingsAPI().getBuilding(b.name).getData();
+            buildingJson.put("name", buildingsDetail.getBuildingName());
+            buildingJson.put("longitude", buildingsDetail.getLongitude());
+            buildingJson.put("latitude", buildingsDetail.getLatitude());
+            http.put(firebaseURL+b.name+".json", buildingJson.toString());
         }
-        http.put(firebaseURL+"buildings.json", buildingJson.toString());
 
         for (int i = 0; i < 5; i++) {
             HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
