@@ -6,7 +6,8 @@ target 'WatRoom' do
   use_frameworks!
   
   # Pods for WatRoom
-  pod 'Backendless', '4.0b2'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'SQLite.swift', '~> 0.11.3'
   
 end
