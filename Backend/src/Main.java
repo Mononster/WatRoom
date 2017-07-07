@@ -6,6 +6,7 @@ import com.endercrest.uwaterlooapi.UWaterlooAPI;
 import com.endercrest.uwaterlooapi.buildings.models.BuildingsDetail;
 import com.endercrest.uwaterlooapi.courses.models.CourseBase;
 import com.endercrest.uwaterlooapi.courses.models.CourseSchedule;
+import com.endercrest.uwaterlooapi.data.ApiRequest;
 import org.json.JSONObject;
 
 import java.util.*;
@@ -41,14 +42,19 @@ public class Main {
             week.add(new HashMap<>());
         }
 
-        System.out.print("Pulling course data...");
+        System.out.print("Pulling course data...\n");
         UWaterlooAPI uWaterlooAPI = new UWaterlooAPI("9df5b8e01a6f19d11a1d7ddd00562da7");
+
         List<CourseBase> courses = uWaterlooAPI.getCoursesAPI().getAllCourses().getData();
-        System.out.print("Building dictionary...");
+        System.out.print("Building dictionary...\n");
         for(CourseBase course : courses) {
             String subject = course.getSubject();
             String catalog = course.getCatalogNumber();
-            List<CourseSchedule> schedules = uWaterlooAPI.getCoursesAPI().getCourseScheduleBySubjectCatalog(subject, catalog).getData();
+            ApiRequest<List<CourseSchedule>> schedulesRequest = uWaterlooAPI.getCoursesAPI().getCourseScheduleBySubjectCatalog(subject, catalog);
+            if(schedulesRequest == null) {
+                continue;
+            }
+            List<CourseSchedule> schedules = schedulesRequest.getData();
             for(CourseSchedule schedule : schedules) {
                 if(schedule != null) {
                     System.out.print(subject+catalog+"\n");
@@ -127,18 +133,27 @@ public class Main {
                 }
             }
         }
-        System.out.print("Updating building information...");
+
+        System.out.print("Updating building information...\n");
         for(Building b : Building.buildings) {
             JSONObject buildingJson = new JSONObject();
-            buildingJson.put("classrooms", b.rooms);
+            buildingJson.put("classrooms", b.rooms);ApiRequest<BuildingsDetail> request = uWaterlooAPI.getBuildingsAPI().getBuilding("SJ1");
+            if(request == null) {
+                continue;
+            }
             BuildingsDetail buildingsDetail = uWaterlooAPI.getBuildingsAPI().getBuilding(b.name).getData();
             buildingJson.put("name", buildingsDetail.getBuildingName());
             buildingJson.put("longitude", buildingsDetail.getLongitude());
             buildingJson.put("latitude", buildingsDetail.getLatitude());
-            http.put(firebaseURL+b.name+".json", buildingJson.toString());
+            try {
+                http.put(firebaseURL + "buildings/" + b.name + ".json", buildingJson.toString());
+                System.out.print(b.name);
+            }catch (Exception e) {
+                System.out.print(e.getMessage()+"\n");
+            }
         }
 
-        System.out.print("Updating schedule...");
+        System.out.print("Updating schedule...\n");
         for (int i = 0; i < 5; i++) {
             HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
             String weekday = convertDay(i);
