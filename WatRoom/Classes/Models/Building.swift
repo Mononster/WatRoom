@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import SQLite
+import FirebaseDatabase
 
 class Building : NSObject{
     
@@ -16,9 +17,9 @@ class Building : NSObject{
     let buildingName: String
     let latitude: Double
     let longitude: Double
-    let classrooms: String
+    let classrooms: [String]
 
-    init(buildingCode: String, buildingName: String, latitude: Double, longitude: Double, classrooms: [Classroom]) {
+    init(buildingCode: String, buildingName: String, latitude: Double, longitude: Double, classrooms: [String]) {
         self.buildingCode = buildingCode
         self.buildingName = buildingName
         self.latitude = latitude
@@ -44,12 +45,12 @@ class Building : NSObject{
     
     func getClassrooms() -> [Classroom] {
         
-        let classroomIDS = CSVToArray(CSV: self.classrooms)
+        let classroomIDS = self.classrooms
         
         var crooms = [Classroom]()
         
         for cID in classroomIDS {
-            crooms.append(Classroom(ID: cID))
+            crooms.append(Classroom(classroomCode: cID))
         }
         
         return crooms
@@ -58,7 +59,7 @@ class Building : NSObject{
     static func initTable() -> Bool {
         var db : Connection
         do {
-            let db = try Connection("Library/Application support/db.sqlite3")
+            db = try Connection("Library/Application support/db.sqlite3")
         }catch {
             return false
         }
@@ -69,8 +70,8 @@ class Building : NSObject{
         let classrooms = Expression<String>("classrooms")
         do {
             let stmt = try db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='Buildings'")
-            for row in stmt {
-                for (index, name) in stmt.columnNames.enumerated() {
+            for _ in stmt {
+                for (_, _) in stmt.columnNames.enumerated() {
                     NSLog("Table \"Building\" already exists, proceeding...")
                     return true
                 }
@@ -92,21 +93,22 @@ class Building : NSObject{
             return false
         }
         
-        var results : [Building]
-        if let backendless = Backendless.sharedInstance() {
-            if let dataStore = backendless.data.of(Building.ofClass()) {
-                do {
-                    try results = dataStore.find()
-                }catch {
-                    NSLog("Downloading failed, check your internet connection!")
-                    return false
-                }
-            }else {
-                return false
+        var results : [Building] = []
+        
+        let buildingsRef = Backend.ref.child("buildings")
+        
+        buildingsRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            for s in snapshot.children {
+                let b = s as! DataSnapshot
+                let building = Building(buildingCode: b.key,
+                                    buildingName: b.value(forKey: "name") as! String,
+                                    latitude: b.value(forKey: "latitude") as! Double,
+                                    longitude: b.value(forKey: "longitude") as! Double,
+                                    classrooms: b.value(forKey: "classrooms")  as! [String])
+                results.append(building)
             }
-        }else {
-            return false
-        }
+        })
+        
         for b in results {
             do {
                 try db.run(buildings.insert(or: .replace,
@@ -114,7 +116,7 @@ class Building : NSObject{
                     buildingName <- b.buildingName,
                     latitude <- b.latitude,
                     longitude <- b.longitude,
-                    classrooms <- b.classrooms))
+                    classrooms <- Backend.ArrayToCSV(array: b.classrooms)))
             }catch {
                 NSLog("An error has happened")
                 return false
@@ -133,7 +135,7 @@ class Building : NSObject{
                                     buildingName: building[Expression<String>("buildingName")],
                                     latitude: building[Expression<Double>("latitude")],
                                     longitude: building[Expression<Double>("longitude")],
-                                    classrooms: building[Expression<Double>("longitude")])
+                                    classrooms: Backend.CSVToArray(CSV: building[Expression<String>("classrooms")]))
             }
         }catch let error as NSError{
             NSLog(error.description)
