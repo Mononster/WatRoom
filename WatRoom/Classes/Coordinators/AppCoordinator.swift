@@ -19,5 +19,6 @@ final class AppCoordinator: Coordinator {
         let classroomsCoordinator = ClassroomsListCoordinator(withNavigationController: navigationController)
         add(childCoordinator: classroomsCoordinator)
         classroomsCoordinator.start()
+        Backend.Init()
     }
 }

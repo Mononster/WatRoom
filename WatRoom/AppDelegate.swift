@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     private var appCoordinator: AppCoordinator?
+    
+    override init() {
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -26,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appCoordinator?.start()
         }
         
-        FirebaseApp.configure()
         
         window?.makeKeyAndVisible()
         

@@ -59,7 +59,10 @@ class Building : NSObject{
     static func initTable() -> Bool {
         var db : Connection
         do {
-            db = try Connection("Library/Application support/db.sqlite3")
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+                ).first!
+            db = try Connection("\(path)/db.sqlite3")
         }catch {
             return false
         }
@@ -73,7 +76,7 @@ class Building : NSObject{
             for _ in stmt {
                 for (_, _) in stmt.columnNames.enumerated() {
                     NSLog("Table \"Building\" already exists, proceeding...")
-                    return true
+                    //return true
                 }
             }
         } catch {
@@ -82,7 +85,8 @@ class Building : NSObject{
         }
         let buildings = Table("Buildings")
         do {
-            try db.run(buildings.create(ifNotExists: true) { t in
+            try db.run(buildings.drop())
+            try db.run(buildings.create(ifNotExists: false) { t in
                 t.column(buildingCode, primaryKey: true) //     "id" INTEGER PRIMARY KEY NOT NULL,
                 t.column(buildingName)  //     "email" TEXT UNIQUE NOT NULL,
                 t.column(latitude)
@@ -101,13 +105,16 @@ class Building : NSObject{
             for s in snapshot.children {
                 let b = s as! DataSnapshot
                 let building = Building(buildingCode: b.key,
-                                    buildingName: b.value(forKey: "name") as! String,
-                                    latitude: b.value(forKey: "latitude") as! Double,
-                                    longitude: b.value(forKey: "longitude") as! Double,
-                                    classrooms: b.value(forKey: "classrooms")  as! [String])
+                                        buildingName: b.childSnapshot(forPath: "name").value as! String,
+                                        latitude: b.childSnapshot(forPath: "latitude").value as! Double,
+                                        longitude: b.childSnapshot(forPath: "longitude").value as! Double,
+                                        classrooms: b.childSnapshot(forPath: "classrooms").value  as! [String])
                 results.append(building)
             }
-        })
+        }){ (error) in
+            let e = "error when downloading from Firebase: "+error.localizedDescription
+            print(e)
+        }
         
         for b in results {
             do {

@@ -12,7 +12,7 @@
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
 		87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */; };
 		AD54BF841EF1F02B006AF018 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54BF831EF1F02B006AF018 /* Date.swift */; };
-		AD981D051EF1DD4A0009B1FD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD981D041EF1DD4A0009B1FD /* RealmSwift.framework */; };
+		BC44F8A21EF5AB7700FB4E45 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F8A11EF5AB7700FB4E45 /* Backend.swift */; };
 		E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */; };
 		F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
@@ -44,11 +44,11 @@
 <<<<<<< HEAD
 		AD54BF831EF1F02B006AF018 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AD91DF441EF1D5E1007050B3 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../Library/Developer/Xcode/DerivedData/WatRoom-acaprawryioxujacdkvsssmhxaju/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
-		AD981D041EF1DD4A0009B1FD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		ADF42EE11EF1D0B500D9C4CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BC44F8A11EF5AB7700FB4E45 /* Backend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 =======
+>>>>>>> master
 		F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrowdLevelVC.swift; path = CrowdLevel/CrowdLevelVC.swift; sourceTree = "<group>"; };
->>>>>>> 848c956... Added crowd level coordinator
 		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
 		F4DE36451EE67AB600F9D89E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD981D051EF1DD4A0009B1FD /* RealmSwift.framework in Frameworks */,
 				E601913D36D9E9DEF90CDAC2 /* Pods_WatRoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,7 +122,6 @@
 		AE6681D65053A1E3063BD189 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD981D041EF1DD4A0009B1FD /* RealmSwift.framework */,
 				AD91DF441EF1D5E1007050B3 /* SQLite.framework */,
 				ADF42EE11EF1D0B500D9C4CA /* libsqlite3.tbd */,
 				31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */,
@@ -165,6 +163,7 @@
 				F4DE364F1EE67BEA00F9D89E /* Building.swift */,
 				F4DE364D1EE67BD400F9D89E /* Classroom.swift */,
 				AD54BF831EF1F02B006AF018 /* Date.swift */,
+				BC44F8A11EF5AB7700FB4E45 /* Backend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC44F8A21EF5AB7700FB4E45 /* Backend.swift in Sources */,
 				F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */,
 				AD54BF841EF1F02B006AF018 /* Date.swift in Sources */,
 				F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */,
@@ -514,21 +514,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = BS52LWRK89;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
-				);
-=======
 				DEVELOPMENT_TEAM = "";
->>>>>>> 848c956... Added crowd level coordinator
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -539,21 +531,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = BS52LWRK89;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
-				);
-=======
 				DEVELOPMENT_TEAM = "";
->>>>>>> 848c956... Added crowd level coordinator
 				INFOPLIST_FILE = WatRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Marvin.WatRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Pods/Backendless/SDK/ios/backendless/include/Backendless-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

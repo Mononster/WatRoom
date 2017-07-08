@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CrowdLevelCoordinatorDelegate: class {
     func crowdLevelCoordinatorDidDismiss(_ coordinator: Coordinator)
