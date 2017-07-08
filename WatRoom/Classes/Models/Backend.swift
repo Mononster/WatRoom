@@ -40,4 +40,28 @@ class Backend{
         }
     }
     
+    static func getFreeClassrooms(StartTime: int, EndTime: int, Day: String) {
+        var result = [Classroom]()
+        
+        var query = ""
+        while StartTime < EndTime {
+            query += Day + String.init(StartTime) + "='free'"
+            StartTime += 10
+            if StartTime % 100 == 60 {
+                StartTime += 40
+            }
+            if StartTime != EndTime {
+                query += " AND "
+            }
+        }
+        let stmt = try db.prepare("SELECT * FROM Classrooms WHERE " + query)
+        for row in stmt {
+            var classroom = Classroom(row[0]!)
+            var schedule = [String]()
+            for (index, name) in stmt.columnNames.enumerated() {
+                
+            }
+        }
+
+    }
 }

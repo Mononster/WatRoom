@@ -80,6 +80,10 @@ public class ApiRequest<T> {
             e.printStackTrace();
         }
 
+        if(json.contains("No data returned")) {
+            return null;
+        }
+
         return gson.fromJson(json, apiRequestType);
     }
 

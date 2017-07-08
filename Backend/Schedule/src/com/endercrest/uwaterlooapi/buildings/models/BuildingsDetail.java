@@ -17,7 +17,9 @@ public class BuildingsDetail {
     private String buildingName;
     @SerializedName("alternate_names")
     private List<String> alternateNames;
+    @SerializedName("latitude")
     private float latitude;
+    @SerializedName("longitude")
     private float longitude;
     @SerializedName("building_sections")
     private List<BuildingsDetailSection> buildingSections;
