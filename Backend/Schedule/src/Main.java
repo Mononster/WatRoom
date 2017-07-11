@@ -135,22 +135,24 @@ public class Main {
         }
 
         System.out.print("Updating building information...\n");
+        JSONObject buildings = new JSONObject();
         for(Building b : Building.buildings) {
             JSONObject buildingJson = new JSONObject();
-            buildingJson.put("classrooms", b.rooms);ApiRequest<BuildingsDetail> request = uWaterlooAPI.getBuildingsAPI().getBuilding("SJ1");
+            buildingJson.put("classrooms", b.rooms);
+            ApiRequest<BuildingsDetail> request = uWaterlooAPI.getBuildingsAPI().getBuilding(b.name);
             if(request == null) {
                 continue;
             }
-            BuildingsDetail buildingsDetail = uWaterlooAPI.getBuildingsAPI().getBuilding(b.name).getData();
+            BuildingsDetail buildingsDetail = request.getData();
             buildingJson.put("name", buildingsDetail.getBuildingName());
             buildingJson.put("longitude", buildingsDetail.getLongitude());
             buildingJson.put("latitude", buildingsDetail.getLatitude());
-            try {
-                http.put(firebaseURL + "buildings/" + b.name + ".json", buildingJson.toString());
-                System.out.print(b.name);
-            }catch (Exception e) {
-                System.out.print(e.getMessage()+"\n");
-            }
+            buildings.put(b.name, buildingJson);
+        }
+        try {
+            http.put(firebaseURL + "buildings.json", buildings.toString());
+        }catch (Exception e) {
+            System.out.print(e.getMessage()+"\n");
         }
 
         System.out.print("Updating schedule...\n");

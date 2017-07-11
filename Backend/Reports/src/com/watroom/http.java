@@ -1,3 +1,5 @@
+package com.watroom;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
@@ -50,5 +52,29 @@ public class http {
                 connection.disconnect();
             }
         }
+    }
+
+    public static String get(String target) {
+        HttpURLConnection connection = null;
+        try {
+            StringBuilder result = new StringBuilder();
+            URL url = new URL(target);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+            rd.close();
+            return result.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+        return "";
     }
 }
