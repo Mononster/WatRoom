@@ -1,8 +1,5 @@
-package com.watroom;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-import com.watroom.http;
 
 public class Main {
     static String firebaseURL = "https://watroom-42e0a.firebaseio.com/";
