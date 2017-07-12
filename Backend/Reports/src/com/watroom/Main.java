@@ -1,10 +1,7 @@
 package com.watroom;
 
-import javafx.util.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class Main {
     static String firebaseURL = "https://watroom-42e0a.firebaseio.com/";
