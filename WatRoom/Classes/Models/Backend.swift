@@ -40,7 +40,7 @@ class Backend{
         }
     }
     
-    static func getFreeClassrooms(StartTime: int, EndTime: int, Day: String) {
+    static func getFreeClassrooms(StartTime: Int, EndTime: Int, Day: String) {
         var result = [Classroom]()
         
         var query = ""

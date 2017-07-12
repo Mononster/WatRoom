@@ -7,7 +7,7 @@ import com.endercrest.uwaterlooapi.buildings.models.BuildingsDetail;
 import com.endercrest.uwaterlooapi.courses.models.CourseBase;
 import com.endercrest.uwaterlooapi.courses.models.CourseSchedule;
 import com.endercrest.uwaterlooapi.data.ApiRequest;
-import org.json.JSONObject;
+//import org.json.JSONObject;
 
 import java.util.*;
 
@@ -35,12 +35,13 @@ public class Main {
     static String firebaseURL = "https://watroom-42e0a.firebaseio.com/";
 
     public static void main(String[] args){
+    	final String initialSchedule = "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111";
 
-        ArrayList<HashMap<String, HashMap<String, HashMap<Integer, String>>>> week = new ArrayList<>();
+        HashMap<String, HashMap<String, ArrayList<String>>> week = new HashMap<String, HashMap<String, ArrayList<String>>>();
 
-        for(int i = 0; i < 5; i++) {
-            week.add(new HashMap<>());
-        }
+        // for(int i = 0; i < 5; i++) {
+            // week.add(new HashMap<>());
+        // }
 
         System.out.print("Pulling course data...\n");
         UWaterlooAPI uWaterlooAPI = new UWaterlooAPI("9df5b8e01a6f19d11a1d7ddd00562da7");
@@ -96,35 +97,34 @@ public class Main {
                                     if(b == null) {
                                         Building building = new Building(location.getBuilding());
                                         Building.buildings.add(building);
-                                        for(HashMap<String, HashMap<String, HashMap<Integer, String>>> dayMap: week) {
-                                            dayMap.put(building.name, new HashMap<>());
-                                        }
+                                        week.put(building.name, new HashMap<String, ArrayList<String>>());
+                                        // for(HashMap<String, HashMap<String, String>> dayMap: week) {
+                                            // dayMap.put(building.name, new HashMap<>());
+                                        // }
                                         b = building;
                                     }
                                     if(!b.rooms.contains(location.getRoom())) {
                                         b.rooms.add(location.getRoom());
                                     }
-                                    HashMap<String, HashMap<Integer, String>> buildingMap = week.get(day).get(b.name);
+
+                                    HashMap<String, ArrayList<String>> buildingMap = week.get(b.name);
+
                                     if(!buildingMap.containsKey(location.getRoom())) {
-                                        HashMap dayMap = new HashMap<Integer, String>();
-                                        for(int time = 700; time < 2260; time += 10) {
-                                            if(time % 100 == 60) {
-                                                time += 40;
-                                            }
-                                            dayMap.put(time, "free");
+                                        buildingMap.put(location.getRoom(), new ArrayList<String>());
+                                        for (int i = 0; i < 5; ++i) {
+                                        	buildingMap.get(location.getRoom()).add(initialSchedule);
                                         }
-                                        buildingMap.put(location.getRoom(), dayMap);
                                     }
-                                    HashMap<Integer, String> dayMap = buildingMap.get(location.getRoom());
+                                    String daySchedule = buildingMap.get(location.getRoom()).at(day);
                                     int start = timeToInt(dates.getStartTime());
                                     int end = timeToInt(dates.getEndTime());
+                                    start = ((start - 700) / 100) * 6 + (start % 100) / 10;
+                                    end = ((end - 700) / 100) * 6 + (end % 100) / 10;
                                     while(start <= end) {
-                                        dayMap.replace(start, subject+catalog);
-                                        start += 10;
-                                        if(start % 100 == 60) {
-                                            start += 40;
-                                        }
+                                        daySchedule[start] = "0";
+                                        start++;
                                     }
+                                    buildingMap.get(location.getRoom()).set(day, daySchedule);
                                 }
                                 day++;
                             }
@@ -156,21 +156,22 @@ public class Main {
         }
 
         System.out.print("Updating schedule...\n");
-        for (int i = 0; i < 5; i++) {
-            HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
-            String weekday = convertDay(i);
-            for(HashMap.Entry<String, HashMap<String, HashMap<Integer, String>>> building: day.entrySet()) {
-                HashMap<String, HashMap<Integer, String>> b = building.getValue();
-                for(HashMap.Entry<String, HashMap<Integer, String>> room: b.entrySet()){
-                    HashMap<Integer, String> r = room.getValue();
-                    JSONObject jsonObject = new JSONObject();
-                    for(HashMap.Entry<Integer, String> entry : r.entrySet()) {
-                        jsonObject.put(String.valueOf(entry.getKey()), entry.getValue());
-                    }
-                    String data = jsonObject.toString();
-                    http.put(firebaseURL+"schedule/"+weekday+"/"+building.getKey()+"/"+room.getKey()+".json", data);
+        //for (int i = 0; i < 5; i++) {
+            //HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
+            
+
+
+        for(HashMap.Entry<String, HashMap<String, ArrayList<String>>> building: week.entrySet()) {
+            HashMap<String, ArrayList<String>> b = building.getValue();
+            for(HashMap.Entry<String, ArrayList<String>> room: b.entrySet()){
+                ArrayList<String> r = room.getValue();
+                for (int i = 0; i < 5; i++) {
+                	String data = r.get(i);
+                	String weekday = convertDay(i);
+                	http.put(firebaseURL+"schedule/"+building.getKey()+"/"+room.getKey()+"/"+weekday+".json", data);
                 }
             }
         }
+        //}
     }
 }
