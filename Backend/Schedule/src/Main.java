@@ -7,7 +7,7 @@ import com.endercrest.uwaterlooapi.buildings.models.BuildingsDetail;
 import com.endercrest.uwaterlooapi.courses.models.CourseBase;
 import com.endercrest.uwaterlooapi.courses.models.CourseSchedule;
 import com.endercrest.uwaterlooapi.data.ApiRequest;
-//import org.json.JSONObject;
+import org.json.JSONObject;
 
 import java.util.*;
 
@@ -115,16 +115,17 @@ public class Main {
                                         	buildingMap.get(location.getRoom()).add(initialSchedule);
                                         }
                                     }
-                                    String daySchedule = buildingMap.get(location.getRoom()).at(day);
+                                    String daySchedule = buildingMap.get(location.getRoom()).get(day);
+                                    char[] newSchedule = daySchedule.toCharArray();
                                     int start = timeToInt(dates.getStartTime());
                                     int end = timeToInt(dates.getEndTime());
                                     start = ((start - 700) / 100) * 6 + (start % 100) / 10;
                                     end = ((end - 700) / 100) * 6 + (end % 100) / 10;
                                     while(start <= end) {
-                                        daySchedule[start] = "0";
+                                        newSchedule[start] = '0';
                                         start++;
                                     }
-                                    buildingMap.get(location.getRoom()).set(day, daySchedule);
+                                    buildingMap.get(location.getRoom()).set(day, String.valueOf(newSchedule));
                                 }
                                 day++;
                             }
@@ -158,20 +159,26 @@ public class Main {
         System.out.print("Updating schedule...\n");
         //for (int i = 0; i < 5; i++) {
             //HashMap<String, HashMap<String, HashMap<Integer, String>>> day = week.get(i);
-            
 
 
+        JSONObject builds = new JSONObject();
         for(HashMap.Entry<String, HashMap<String, ArrayList<String>>> building: week.entrySet()) {
             HashMap<String, ArrayList<String>> b = building.getValue();
+            JSONObject build = new JSONObject();
             for(HashMap.Entry<String, ArrayList<String>> room: b.entrySet()){
                 ArrayList<String> r = room.getValue();
+                JSONObject classroom = new JSONObject();
                 for (int i = 0; i < 5; i++) {
                 	String data = r.get(i);
                 	String weekday = convertDay(i);
-                	http.put(firebaseURL+"schedule/"+building.getKey()+"/"+room.getKey()+"/"+weekday+".json", data);
+                    classroom.put(weekday, data);
+                	//http.put(firebaseURL+"schedule/"+building.getKey()+"/"+room.getKey()+"/"+weekday+".json", data);
                 }
+                build.put(room.getKey(), classroom);
             }
+            builds.put(building.getKey(), build);
         }
+        http.put(firebaseURL + "schedule.json", builds.toString());
         //}
     }
 }
