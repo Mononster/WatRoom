@@ -12,6 +12,7 @@ import MapKit
 
 protocol ClassroomsListVCDelegate: class {
     func didTapCrowdLevel()
+    func didTapClassroom(_ classroom: Classroom)
 }
 
 class ClassroomsListVC: UIViewController, StoryboardInstantiable {
@@ -254,6 +255,11 @@ extension ClassroomsListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let building = buildings[indexPath.section]
+        let classroom = building.classrooms[indexPath.row]
+        
+        delegate?.didTapClassroom(classroom)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -274,7 +280,7 @@ extension ClassroomsListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = Palette.themeColor
-        header.textLabel?.font = UIFont.init(name: "Avenir-Medium", size: 15)
+        header.textLabel?.font = UIFont(name: "Avenir-Medium", size: 15)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -289,6 +295,8 @@ extension ClassroomsListVC: UITableViewDataSource {
         
         let building = buildings[indexPath.section]
         cell.classroom = building.classrooms[indexPath.row]
+        
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

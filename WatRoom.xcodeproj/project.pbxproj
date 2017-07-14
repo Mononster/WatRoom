@@ -32,6 +32,7 @@
 		F45307E51EF5FBCE001DF6D0 /* Date+Weekdays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E31EF5FBCE001DF6D0 /* Date+Weekdays.swift */; };
 		F45307E71EF60595001DF6D0 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E61EF60595001DF6D0 /* Day.swift */; };
 		F45307E91EF60E1D001DF6D0 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45307E81EF60E1D001DF6D0 /* Feature.swift */; };
+		F4564A8D1F16A54600020CF5 /* ClassroomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4564A8C1F16A54600020CF5 /* ClassroomVC.swift */; };
 		F468B54D1EF07E83006C2A11 /* CrowdLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */; };
 		F4DE36341EE6012E00F9D89E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */; };
 		F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */; };
@@ -79,6 +80,7 @@
 		F45307E31EF5FBCE001DF6D0 /* Date+Weekdays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Weekdays.swift"; sourceTree = "<group>"; };
 		F45307E61EF60595001DF6D0 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		F45307E81EF60E1D001DF6D0 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		F4564A8C1F16A54600020CF5 /* ClassroomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassroomVC.swift; path = Classroom/ClassroomVC.swift; sourceTree = "<group>"; };
 		F468B54C1EF07E83006C2A11 /* CrowdLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrowdLevelVC.swift; path = CrowdLevel/CrowdLevelVC.swift; sourceTree = "<group>"; };
 		F4DE36321EE6012E00F9D89E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F4DE363F1EE6766200F9D89E /* ClassroomsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomsManager.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		F4DE36651EE685D100F9D89E /* Classroom */ = {
 			isa = PBXGroup;
 			children = (
+				F4564A8C1F16A54600020CF5 /* ClassroomVC.swift */,
 			);
 			name = Classroom;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
 				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
 				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
+				F4564A8D1F16A54600020CF5 /* ClassroomVC.swift in Sources */,
 				F45307E01EF5FB7C001DF6D0 /* MidPointCircularSlider.swift in Sources */,
 				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,
 				F45307E11EF5FB7C001DF6D0 /* RangeCircularSlider.swift in Sources */,

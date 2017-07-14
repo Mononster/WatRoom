@@ -33,12 +33,12 @@ class ClassroomsListCell: UITableViewCell, StoryboardInstantiable {
 
         roomNumber?.text = classroom.roomNumber
         
-        guard let availability = filterAvailability() else { return }
+        guard let availability = timeAvailability() else { return }
         
         time?.text = availability.startTime + " - " + availability.endTime
     }
     
-    private func filterAvailability() -> (startTime: String, endTime: String)? {
+    private func timeAvailability() -> (startTime: String, endTime: String)? {
         let tenMinutes = 60 * 10
         
         let minIndex = 7 * 60 * 60 / tenMinutes

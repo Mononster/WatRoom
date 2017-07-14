@@ -22,8 +22,14 @@ final class ClassroomsListCoordinator: Coordinator {
 
 extension ClassroomsListCoordinator: ClassroomsListVCDelegate {
     
-    func didTapCrowdLevel() {
+    func didTapClassroom(_ classroom: Classroom) {
         
+        
+        
+        
+    }
+    
+    func didTapCrowdLevel() {
         let crowdLevelCoordinator = CrowdLevelCoordinator(withNavigationController: navigationController)
         add(childCoordinator: crowdLevelCoordinator)
         crowdLevelCoordinator.delegate = self
