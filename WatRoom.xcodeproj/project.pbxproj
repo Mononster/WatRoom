@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8714D7091F19D515008C06B3 /* DataLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D7081F19D515008C06B3 /* DataLoadingView.swift */; };
+		8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */; };
+		8714D70D1F19D5B5008C06B3 /* goose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8714D70C1F19D5B4008C06B3 /* goose.gif */; };
+		8714D70F1F19D5D9008C06B3 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */; };
 		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		2F3B37AE9AF24E92FA4097BD /* Pods-WatRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		31F03D16E286DDC6F3D050FC /* Pods_WatRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.release.xcconfig"; sourceTree = "<group>"; };
+		8714D7081F19D515008C06B3 /* DataLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingView.swift; sourceTree = "<group>"; };
+		8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataLoadingView.xib; sourceTree = "<group>"; };
+		8714D70C1F19D5B4008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = goose.gif; path = ../../../../../Downloads/goose.gif; sourceTree = "<group>"; };
+		8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,9 +131,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8714D7071F19D4F7008C06B3 /* DataLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				8714D7081F19D515008C06B3 /* DataLoadingView.swift */,
+				8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */,
+			);
+			path = DataLoadingView;
+			sourceTree = "<group>";
+		};
 		879E467D1EF31B1400587BE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8714D7071F19D4F7008C06B3 /* DataLoadingView */,
 				F45307C51EF5FB19001DF6D0 /* NavigationButton */,
 				F45307C21EF5FADD001DF6D0 /* DropDownMenu */,
 				F45307C11EF5FAD5001DF6D0 /* DateControl */,
@@ -160,6 +178,7 @@
 				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
 				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
 				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
+				8714D70C1F19D5B4008C06B3 /* goose.gif */,
 				87C41CE81ED896B5001E90F1 /* Info.plist */,
 				F4D16EA21F19408400622DA4 /* GoogleService-Info.plist */,
 				F4DE36451EE67AB600F9D89E /* Localizable.strings */,
@@ -295,6 +314,7 @@
 				F45307E31EF5FBCE001DF6D0 /* Date+Weekdays.swift */,
 				F4DE36491EE67BC900F9D89E /* Constants.swift */,
 				F4DE364A1EE67BC900F9D89E /* Extensions.swift */,
+				8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */,
 				F4DE36671EE687C000F9D89E /* Protocols.swift */,
 			);
 			path = Utilities;
@@ -430,8 +450,10 @@
 				87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */,
 				F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */,
 				87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */,
+				8714D70D1F19D5B5008C06B3 /* goose.gif in Resources */,
 				F45307D31EF5FB69001DF6D0 /* DropDownMenuCell.xib in Resources */,
 				F45307C91EF5FB57001DF6D0 /* NavigationButton.xib in Resources */,
+				8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +531,7 @@
 				F45307E71EF60595001DF6D0 /* Day.swift in Sources */,
 				F44495B81EF6D780004B4778 /* ClassroomsListCell.swift in Sources */,
 				F45307E91EF60E1D001DF6D0 /* Feature.swift in Sources */,
+				8714D7091F19D515008C06B3 /* DataLoadingView.swift in Sources */,
 				F45307D41EF5FB69001DF6D0 /* DropDownMenuTimeCell.swift in Sources */,
 				F45307E51EF5FBCE001DF6D0 /* Date+Weekdays.swift in Sources */,
 				F45307CC1EF5FB60001DF6D0 /* DropDownMenu.swift in Sources */,
@@ -519,6 +542,7 @@
 				F45307E01EF5FB7C001DF6D0 /* MidPointCircularSlider.swift in Sources */,
 				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,
 				F45307E11EF5FB7C001DF6D0 /* RangeCircularSlider.swift in Sources */,
+				8714D70F1F19D5D9008C06B3 /* UIImage+GIF.swift in Sources */,
 				F4DE364B1EE67BC900F9D89E /* Constants.swift in Sources */,
 				F4DE36531EE67C5F00F9D89E /* Coordinator.swift in Sources */,
 				F45307D71EF5FB73001DF6D0 /* DateControl.swift in Sources */,

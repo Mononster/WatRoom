@@ -58,6 +58,7 @@ class SortDropDownTable: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
         menuBarHeight = frame.height
         
     }
@@ -68,7 +69,6 @@ class SortDropDownTable: UIView {
     
     func reloadData() {
         configureMenuData()
-        setupUI()
     }
     
     private func configureMenuData() {

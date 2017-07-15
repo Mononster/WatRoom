@@ -23,41 +23,35 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
     
     fileprivate var searchBar: UISearchBar?
     fileprivate var searchBarButtonItem: UIBarButtonItem?
+    fileprivate var crowdLevelButton: UIBarButtonItem?
     fileprivate var titleView: UILabel?
     fileprivate var sortDropDownTable: SortDropDownTable?
+    fileprivate var dataLodingView: DataLoadingView?
     
     @IBOutlet weak var mapView: MKMapView?
     fileprivate let locationManager = CLLocationManager()
     
     @IBOutlet weak var tableView: UITableView?
     
-    fileprivate var buildings: [Building] = [] {
-        didSet {
-            reloadData()
-        }
-    }
+    fileprivate var buildings: [Building] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        //addCrowdLevelButtons()
         
         configureMapView()
         
+        self.tableView?.separatorStyle = .none
+        self.dataLodingView?.isHidden = false
         ClassroomsManager.sharedInstance.fetchData { [weak self] (buildings: [Building]) in
             self?.buildings = buildings
             self?.reloadData()
             self?.sortDropDownTable?.reloadData()
+            self?.dataLodingView?.isHidden = true
+            self?.tableView?.separatorStyle = .singleLine
         }
         
         didUpdateFilters()
-    }
-    
-    private func addCrowdLevelButtons() {
-        
-        // TODO: this is temporary. will need to be replaced by icons
-        let crowdLevelButton = UIBarButtonItem(title: "Crowd", style: .plain, target: self, action: #selector(didTapCrowdLevel))
-        navigationItem.rightBarButtonItem = crowdLevelButton
     }
     
     func didTapCrowdLevel(sender: UIBarButtonItem) {
@@ -121,13 +115,32 @@ extension ClassroomsListVC {
     
     func setupUI() {
         self.view.backgroundColor = UIColor.white
+        setupNavBar()
+        setupDropDownMenu()
+        setupSearchBar()
+        setupDataLoadingView()
+    }
+    
+    func setupDataLoadingView(){
+        self.dataLodingView = DataLoadingView.dataLoadingView()
+        self.view.addSubview(dataLodingView!)
+        
+        self.dataLodingView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        dataLodingView?.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        dataLodingView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+    }
+    
+    func setupNavBar() {
         titleView = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         titleView?.text = "Classrooms"
         titleView?.textColor = UIColor.darkGray
         titleView?.font = UIFont.init(name: "Avenir-Medium", size: 21)
         navigationItem.titleView = titleView
-        setupDropDownMenu()
-        setupSearchBar()
+        
+        // TODO: this is temporary. will need to be replaced by icons
+        crowdLevelButton = UIBarButtonItem(image: #imageLiteral(resourceName: "icon_library"), style: .plain, target: self, action: #selector(didTapCrowdLevel))
+        navigationItem.leftBarButtonItem = crowdLevelButton
     }
     
     func setupDropDownMenu() {
@@ -250,7 +263,10 @@ extension ClassroomsListVC {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.navigationItem.titleView = self?.titleView
             self?.titleView?.alpha = 1
-            }, completion: nil)
+            } ,completion:
+            { _ in
+                self.navigationItem.leftBarButtonItem = self.crowdLevelButton
+        })
     }
 }
 
