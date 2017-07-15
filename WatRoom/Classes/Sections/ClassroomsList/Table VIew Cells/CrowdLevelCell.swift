@@ -37,7 +37,7 @@ class CrowdLevelCell: UITableViewCell, StoryboardInstantiable {
         guard let data = crowdData else { return }
         
         libraryName?.text = data.location
-        crowdLevel?.text = "Crowd Level: \(data.level)%"
+        crowdLevel?.text = "Crowd: \(data.level)%"
     }
     
 }

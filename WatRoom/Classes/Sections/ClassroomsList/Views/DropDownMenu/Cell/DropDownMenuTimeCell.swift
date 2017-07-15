@@ -20,6 +20,10 @@ class DropDownMenuTimeCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.locale = Locale(identifier:"en_US_POSIX")
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        
         
         adjustValue(value: &slider.startPointValue)
         adjustValue(value: &slider.endPointValue)
@@ -37,7 +41,7 @@ class DropDownMenuTimeCell: UITableViewCell {
     
     func adjustValue(value: inout CGFloat) {
         let minutes = value / 60
-        let adjustedMinutes =  ceil(minutes / 10.0) * 10
+        let adjustedMinutes =  ceil(minutes / 5.0) * 5
         value = adjustedMinutes * 60
     }
     
@@ -52,8 +56,8 @@ class DropDownMenuTimeCell: UITableViewCell {
         let dayInSeconds = 24 * 60 * 60
         slider.maximumValue = CGFloat(dayInSeconds)
         
-        slider.startPointValue = 7 * 60 * 60
-        slider.endPointValue = 22 * 60 * 60
+        slider.startPointValue = 1 * 60 * 60
+        slider.endPointValue = 8 * 60 * 60
         
         updateText(slider)
     }
