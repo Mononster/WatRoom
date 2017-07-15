@@ -22,7 +22,7 @@ final class ClassroomCoordinator: Coordinator {
         
         classroomVC.delegate = self
         classroomVC.data = (classroom, building)
-        navigationController.pushViewController(classroomVC, animated: false)
+        navigationController.pushViewController(classroomVC, animated: true)
     }
 }
 
