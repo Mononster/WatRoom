@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8714D7091F19D515008C06B3 /* DataLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D7081F19D515008C06B3 /* DataLoadingView.swift */; };
 		8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */; };
-		8714D70D1F19D5B5008C06B3 /* goose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8714D70C1F19D5B4008C06B3 /* goose.gif */; };
 		8714D70F1F19D5D9008C06B3 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */; };
 		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
@@ -62,7 +61,6 @@
 		428B69999CC0C3DD12A7906B /* Pods-WatRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatRoom/Pods-WatRoom.release.xcconfig"; sourceTree = "<group>"; };
 		8714D7081F19D515008C06B3 /* DataLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingView.swift; sourceTree = "<group>"; };
 		8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataLoadingView.xib; sourceTree = "<group>"; };
-		8714D70C1F19D5B4008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = goose.gif; path = ../../../../../Downloads/goose.gif; sourceTree = "<group>"; };
 		8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +176,11 @@
 				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
 				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
 				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
+<<<<<<< HEAD
 				8714D70C1F19D5B4008C06B3 /* goose.gif */,
+=======
+				8714D7101F19DA54008C06B3 /* goose.gif */,
+>>>>>>> 8840d6fe6c39fb53e66578d3d661d99317752b26
 				87C41CE81ED896B5001E90F1 /* Info.plist */,
 				F4D16EA21F19408400622DA4 /* GoogleService-Info.plist */,
 				F4DE36451EE67AB600F9D89E /* Localizable.strings */,
@@ -450,7 +452,6 @@
 				87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */,
 				F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */,
 				87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */,
-				8714D70D1F19D5B5008C06B3 /* goose.gif in Resources */,
 				F45307D31EF5FB69001DF6D0 /* DropDownMenuCell.xib in Resources */,
 				F45307C91EF5FB57001DF6D0 /* NavigationButton.xib in Resources */,
 				8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */,

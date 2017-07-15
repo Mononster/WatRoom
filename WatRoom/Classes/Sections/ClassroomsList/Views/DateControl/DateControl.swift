@@ -112,8 +112,6 @@ class DateControl: UIView {
                 shapeLayer.add(strokeAnimation, forKey: nil)
             }
         }
-        
-        
     }
     
     func tappedMenu(tap: UITapGestureRecognizer) {
