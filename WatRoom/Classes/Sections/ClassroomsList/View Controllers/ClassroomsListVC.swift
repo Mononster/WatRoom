@@ -12,7 +12,7 @@ import MapKit
 
 protocol ClassroomsListVCDelegate: class {
     func didTapCrowdLevel()
-    func didTapClassroom(_ classroom: Classroom)
+    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building)
 }
 
 class ClassroomsListVC: UIViewController, StoryboardInstantiable {
@@ -322,7 +322,7 @@ extension ClassroomsListVC: UITableViewDelegate {
         let building = buildings[indexPath.section]
         let classroom = building.classrooms[indexPath.row]
         
-        delegate?.didTapClassroom(classroom)
+        delegate?.didTapClassroom(classroom, inBuilding: building)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

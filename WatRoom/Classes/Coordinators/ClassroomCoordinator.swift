@@ -16,16 +16,17 @@ final class ClassroomCoordinator: Coordinator {
     
     weak var delegate: ClassroomCoordinatorDelegate?
     
-    override func start() {
+    func start(withClassroom classroom: Classroom, building: Building) {
         guard let classroomVC = UIStoryboard.main.instantiateViewController(withIdentifier:
             ClassroomVC.identifier) as? ClassroomVC else { return }
         
         classroomVC.delegate = self
+        classroomVC.data = (classroom, building)
         navigationController.pushViewController(classroomVC, animated: false)
     }
 }
 
-extension ClassroomCoordinator: ClassroomsVCDelegate {
+extension ClassroomCoordinator: ClassroomVCDelegate {
     
     func didTapBack() {
         delegate?.classroomCoordinatorDidDismiss(self)
