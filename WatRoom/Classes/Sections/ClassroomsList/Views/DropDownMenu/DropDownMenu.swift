@@ -41,7 +41,7 @@ class SortDropDownTable: UIView {
     var menuBarHeight: CGFloat = 40
     
     fileprivate var isShowingMap = false
-    fileprivate var mapButton: NavigationButton?
+    fileprivate(set) var mapButton: NavigationButton?
     
     weak var menuDelegate: MenuDelegate?
     
