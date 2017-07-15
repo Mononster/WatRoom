@@ -227,6 +227,8 @@ extension SortDropDownTable{
             tableView.isScrollEnabled = true
         }
         
+        
+        
         if prevSelectedIndex != sender.tag && present {
             // when user selects a different category when he does
             // not close the previous category

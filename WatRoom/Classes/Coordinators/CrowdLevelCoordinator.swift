@@ -21,7 +21,7 @@ final class CrowdLevelCoordinator: Coordinator {
             CrowdLevelVC.identifier) as? CrowdLevelVC else { return }
         
         crowdLevelVC.delegate = self
-        navigationController.pushViewController(crowdLevelVC, animated: false)
+        navigationController.pushViewController(crowdLevelVC, animated: true)
     }
 }
 
