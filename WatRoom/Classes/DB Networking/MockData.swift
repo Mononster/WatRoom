@@ -8,8 +8,25 @@
 
 import Foundation
 
+struct CrowdData {
+    let location: String
+    let level: Int
+}
+
 struct MockData {
     
+    static func generateCrowdLevelData() -> [CrowdData] {
+        
+        let data = [CrowdData(location: "Dana Porter Library", level: 68),
+                    CrowdData(location: "Davis Centre Library", level: 73),
+                    CrowdData(location: "Student Life Centre", level: 53),
+                    CrowdData(location: "Helix Computer Lab", level: 39),
+                    CrowdData(location: "Pulley Computer Lab", level: 77),
+                    CrowdData(location: "South Campus Hall", level: 13),
+                    CrowdData(location: "Engineering 2", level: 62)]
+        
+        return data
+    }
     
 //    static func generateBuildings() -> [Building] {
 //        
