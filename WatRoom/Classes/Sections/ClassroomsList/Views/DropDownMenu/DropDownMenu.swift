@@ -220,6 +220,10 @@ extension SortDropDownTable{
         tableView.reloadData()
         var tableViewHeight = CGFloat(tableView.numberOfRows(inSection: 0)) * tableView.rowHeight + 20
         
+        if tableViewHeight > UIScreen.main.bounds.height * 3 / 4 {
+            tableViewHeight = UIScreen.main.bounds.height * 3 / 4
+        }
+        
         if currentSelectedIndex == MenuCategory.time.rawValue {
             tableView.isScrollEnabled = false
             tableViewHeight = 270
