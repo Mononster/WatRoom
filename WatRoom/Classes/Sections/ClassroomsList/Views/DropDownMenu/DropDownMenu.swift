@@ -160,8 +160,6 @@ extension SortDropDownTable {
         tableView.autoresizesSubviews = false
         tableView.register(UINib.init(nibName: "DropDownMenuCell", bundle: nil), forCellReuseIdentifier: "DropDownMenuCell")
         tableView.register(UINib.init(nibName: "DropDownMenuTimeCell", bundle: nil), forCellReuseIdentifier: "DropDownMenuTimeCell")
-        
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 740, 0)
     }
     
     func cleanUI(){
