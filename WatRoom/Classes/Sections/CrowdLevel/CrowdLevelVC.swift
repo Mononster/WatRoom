@@ -38,8 +38,6 @@ class CrowdLevelVC: UIViewController, StoryboardInstantiable {
         }
         
         progressRing.setProgress(value: CGFloat(sum/crowdLevelData.count), animationDuration: 2.0) {
-            print("Done animating!")
-            // Do anything your heart desires...
         }
     }
     

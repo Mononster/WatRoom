@@ -56,8 +56,8 @@ class DropDownMenuTimeCell: UITableViewCell {
         let dayInSeconds = 24 * 60 * 60
         slider.maximumValue = CGFloat(dayInSeconds)
         
-        slider.startPointValue = 1 * 60 * 60
-        slider.endPointValue = 8 * 60 * 60
+        slider.startPointValue = 9 * 60 * 60
+        slider.endPointValue = 11 * 60 * 60
         
         updateText(slider)
     }
