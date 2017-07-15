@@ -11,6 +11,7 @@
 		8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */; };
 		8714D70F1F19D5D9008C06B3 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */; };
 		8714D7141F19E24B008C06B3 /* goose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8714D7121F19E159008C06B3 /* goose.gif */; };
+		8714D7161F19E875008C06B3 /* CrowdLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D7151F19E875008C06B3 /* CrowdLevelCell.swift */; };
 		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataLoadingView.xib; sourceTree = "<group>"; };
 		8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
 		8714D7121F19E159008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = goose.gif; sourceTree = SOURCE_ROOT; };
+		8714D7151F19E875008C06B3 /* CrowdLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdLevelCell.swift; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				F44495B71EF6D780004B4778 /* ClassroomsListCell.swift */,
+				8714D7151F19E875008C06B3 /* CrowdLevelCell.swift */,
 			);
 			name = "Table View Cells";
 			path = "Table VIew Cells";
@@ -502,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -538,6 +541,7 @@
 				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
 				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
 				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
+				8714D7161F19E875008C06B3 /* CrowdLevelCell.swift in Sources */,
 				F4564A8D1F16A54600020CF5 /* ClassroomVC.swift in Sources */,
 				F45307E01EF5FB7C001DF6D0 /* MidPointCircularSlider.swift in Sources */,
 				F4DE36621EE684AA00F9D89E /* ClassroomsListVC.swift in Sources */,

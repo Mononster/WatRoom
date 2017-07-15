@@ -17,9 +17,11 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - UICircularProgressRing (1.6.2)
 
 DEPENDENCIES:
   - Firebase/Database
+  - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
@@ -29,7 +31,8 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  UICircularProgressRing: f25e366e0624d87973192b67e572c0712acbae85
 
-PODFILE CHECKSUM: adc9e6a165b5541e72980acba139e62e23b9ecfc
+PODFILE CHECKSUM: ad4ec011ce723a78bbf6e2407af79c3cd1724b01
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1

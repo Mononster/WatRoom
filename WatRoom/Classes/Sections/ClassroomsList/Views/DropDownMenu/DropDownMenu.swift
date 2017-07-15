@@ -222,11 +222,14 @@ extension SortDropDownTable{
         
         if currentSelectedIndex == MenuCategory.time.rawValue {
             tableView.isScrollEnabled = false
-            tableViewHeight = 270
+            tableViewHeight = 300
         } else {
             tableView.isScrollEnabled = true
         }
         
+        if tableViewHeight > UIScreen.main.bounds.height / 2 {
+            tableViewHeight = UIScreen.main.bounds.height / 2
+        }
         
         
         if prevSelectedIndex != sender.tag && present {

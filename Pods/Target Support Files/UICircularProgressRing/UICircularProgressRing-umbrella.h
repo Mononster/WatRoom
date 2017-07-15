@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "UICircularProgressRing.h"
 
-FOUNDATION_EXPORT double Pods_WatRoomVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_WatRoomVersionString[];
+FOUNDATION_EXPORT double UICircularProgressRingVersionNumber;
+FOUNDATION_EXPORT const unsigned char UICircularProgressRingVersionString[];
 

@@ -280,15 +280,17 @@ extension ClassroomsListVC: UITableViewDelegate {
         delegate?.didTapClassroom(classroom)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
+    
 }
 
 extension ClassroomsListVC: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return buildings.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
