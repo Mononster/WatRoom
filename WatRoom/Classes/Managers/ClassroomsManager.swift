@@ -16,11 +16,18 @@ class ClassroomsManager {
         return classroomsManager
     }
     
-    let buildings: [Building] = MockData.generateBuildings()
+    var buildings: [Building] = []
     
     var buildingsFilter: [Bool] = []
     var distanceFilter: [Bool] = []
     
     var dayFilter = Day(name: .monday)
     var timeFilter: (start: Date, end: Date) = (Date(), Date())
+    
+    func fetchData(completion: @escaping (_ buildings: [Building]) -> Void) {
+        Database.fetchBuildings { (buildings: [Building]) in
+            self.buildings = buildings
+            completion(buildings)
+        }
+    }
 }

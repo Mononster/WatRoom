@@ -6,7 +6,7 @@
 //  Copyright © 2017 Monster. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ClassroomCoordinatorDelegate: class {
     func classroomCoordinatorDidDismiss(_ coordinator: Coordinator)

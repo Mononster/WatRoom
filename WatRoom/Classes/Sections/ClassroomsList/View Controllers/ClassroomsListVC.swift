@@ -44,8 +44,11 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
         
         configureMapView()
         
-        buildings = ClassroomsManager.sharedInstance.buildings
-        reloadData()
+        ClassroomsManager.sharedInstance.fetchData { [weak self] (buildings: [Building]) in
+            self?.buildings = buildings
+            self?.reloadData()
+            self?.sortDropDownTable?.reloadData()
+        }
         
         didUpdateFilters()
     }
@@ -152,7 +155,8 @@ extension ClassroomsListVC: MenuDelegate {
         var filteredBuildings: [Building] = []
 
         for (index, building) in ClassroomsManager.sharedInstance.buildings.enumerated() {
-            guard ClassroomsManager.sharedInstance.buildingsFilter[index] != false else { continue }
+            guard ClassroomsManager.sharedInstance.buildingsFilter.count > 0,
+                ClassroomsManager.sharedInstance.buildingsFilter[index] != false else { continue }
             
             let filteredBuilding = Building(name: building.name, abbreviation: building.abbreviation,
                                             location: building.locationCoordinate,
@@ -183,7 +187,6 @@ extension ClassroomsListVC: MenuDelegate {
             })
             
         }
-        
     }
     
     func timeFilterClassrooms(forBuilding building: Building) -> [Classroom] {
@@ -217,7 +220,7 @@ extension ClassroomsListVC: MenuDelegate {
             
             let shouldShowClassroom = filteredAvailability.reduce(0, { (result, available) in
                 return available ? result + 1 : result
-            }) > 3
+            }) > 0
             
             if shouldShowClassroom {
                 filteredClassrooms.append(classroom)

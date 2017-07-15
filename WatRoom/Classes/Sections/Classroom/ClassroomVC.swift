@@ -6,7 +6,7 @@
 //  Copyright © 2017 Monster. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ClassroomsVCDelegate: class {
     func didTapBack()

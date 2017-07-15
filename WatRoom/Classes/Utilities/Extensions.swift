@@ -42,6 +42,15 @@ extension String {
         
         return CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
+    
+    var bool: Bool {
+        switch self {
+        case "1":
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 extension UIStoryboard {

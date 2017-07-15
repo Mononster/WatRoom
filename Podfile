@@ -4,7 +4,7 @@
 target 'WatRoom' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Backendless', '4.0b2'
+  pod 'Firebase/Database'
   # Pods for WatRoom
 
 end

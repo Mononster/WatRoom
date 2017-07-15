@@ -32,6 +32,24 @@ struct Day {
         self.name = name
     }
     
+    var abbreviation: String {
+        
+        switch name {
+        case .monday:
+            return "Mon"
+        case .tuesday:
+            return "Tue"
+        case .wednesday:
+            return "Wed"
+        case .thursday:
+            return "Thu"
+        case .friday:
+            return "Fri"
+        default:
+            return ""
+        }
+    }
+    
     static func atIndex(_ index: Int) -> Day {
         switch index {
         case 0:

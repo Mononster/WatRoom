@@ -59,12 +59,16 @@ class SortDropDownTable: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         menuBarHeight = frame.height
-        configureMenuData()
-        setupUI()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func reloadData() {
+        configureMenuData()
+        setupUI()
     }
     
     private func configureMenuData() {
@@ -143,7 +147,8 @@ extension SortDropDownTable {
         // at top of our keyWindow.
         
         // 64 for navigation bar
-        self.tableView = UITableView(frame: CGRect(x: 0, y: menuBarContainer.frame.height + 64, width : self.frame.width, height : 0))
+        self.tableView = UITableView(frame: CGRect(x: 0, y: menuBarContainer.frame.height + 64,
+                                                   width: self.frame.width, height: 0))
         
         tableViewOriginFrame = tableView.frame
         tableView.backgroundColor = UIColor.white
@@ -155,6 +160,8 @@ extension SortDropDownTable {
         tableView.autoresizesSubviews = false
         tableView.register(UINib.init(nibName: "DropDownMenuCell", bundle: nil), forCellReuseIdentifier: "DropDownMenuCell")
         tableView.register(UINib.init(nibName: "DropDownMenuTimeCell", bundle: nil), forCellReuseIdentifier: "DropDownMenuTimeCell")
+        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 740, 0)
     }
     
     func cleanUI(){
