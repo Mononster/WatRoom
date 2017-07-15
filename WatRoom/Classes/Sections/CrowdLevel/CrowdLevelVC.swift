@@ -23,6 +23,8 @@ class CrowdLevelVC: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var progressRing: UICircularProgressRingView!
     
+    fileprivate let crowdLevelData = MockData.generateCrowdLevelData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +32,12 @@ class CrowdLevelVC: UIViewController, StoryboardInstantiable {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        progressRing.setProgress(value: 68, animationDuration: 2.0) {
+        
+        let sum = crowdLevelData.reduce(0) { (result, data) in
+            return result + data.level
+        }
+        
+        progressRing.setProgress(value: CGFloat(sum/crowdLevelData.count), animationDuration: 2.0) {
             print("Done animating!")
             // Do anything your heart desires...
         }
@@ -56,7 +63,7 @@ extension CrowdLevelVC {
     
     func setupNavBar() {
         let titleView = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        titleView.text = "Library Crowd Level"
+        titleView.text = "Campus Crowd Level"
         titleView.textColor = UIColor.darkGray
         titleView.font = UIFont.init(name: "Avenir-Medium", size: 18)
         navigationItem.titleView = titleView
@@ -73,7 +80,7 @@ extension CrowdLevelVC {
 extension CrowdLevelVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return crowdLevelData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,10 +93,7 @@ extension CrowdLevelVC: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-//        let building = buildings[indexPath.section]
-//        cell.classroom = building.classrooms[indexPath.row]
-//
-//        cell.accessoryType = .disclosureIndicator
+        cell.crowdData = crowdLevelData[indexPath.row]
         
         return cell
     }

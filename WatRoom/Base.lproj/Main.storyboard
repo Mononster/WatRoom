@@ -35,56 +35,40 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYT-o1-qNA" id="e7B-1v-IAh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5h-Kd-nB4">
                                                     <rect key="frame" x="16" y="5" width="100" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DP library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLC-H6-xuw">
-                                                            <rect key="frame" x="8" y="6.5" width="76" height="24"/>
+                                                            <rect key="frame" x="8" y="13" width="76" height="24"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floor 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-oZ-KNU">
-                                                            <rect key="frame" x="9" y="30" width="38.5" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                                            <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="fLC-H6-xuw" secondAttribute="bottom" constant="20" id="QJi-iB-7wZ"/>
                                                         <constraint firstItem="fLC-H6-xuw" firstAttribute="leading" secondItem="x5h-Kd-nB4" secondAttribute="leading" constant="8" id="W8c-hY-OOV"/>
                                                         <constraint firstAttribute="height" constant="50" id="aoM-Kl-B6C"/>
-                                                        <constraint firstItem="6xb-oZ-KNU" firstAttribute="leading" secondItem="fLC-H6-xuw" secondAttribute="leading" constant="1" id="fwp-ZN-xPd"/>
+                                                        <constraint firstItem="fLC-H6-xuw" firstAttribute="centerY" secondItem="x5h-Kd-nB4" secondAttribute="centerY" id="dUi-aj-osv"/>
                                                         <constraint firstAttribute="width" constant="100" id="loZ-d1-UfN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6xb-oZ-KNU" secondAttribute="bottom" constant="3" id="yrG-eO-TFp"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGk-Jn-eYO">
                                                     <rect key="frame" x="195" y="5" width="100" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crowd Level: 36%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-vW-R4D">
-                                                            <rect key="frame" x="8" y="6.5" width="139.5" height="24"/>
+                                                            <rect key="frame" x="8" y="13" width="139.5" height="24"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slient Study Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URk-gQ-ewx">
-                                                            <rect key="frame" x="9" y="30" width="96" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                                            <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="URk-gQ-ewx" firstAttribute="leading" secondItem="gPh-vW-R4D" secondAttribute="leading" constant="0.5" id="1nO-MK-Kfb"/>
                                                         <constraint firstAttribute="width" constant="100" id="6vI-zy-dUY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="gPh-vW-R4D" secondAttribute="bottom" constant="20" id="9kQ-CP-byh"/>
+                                                        <constraint firstItem="gPh-vW-R4D" firstAttribute="centerY" secondItem="UGk-Jn-eYO" secondAttribute="centerY" id="Bmz-Gb-TZ8"/>
                                                         <constraint firstAttribute="height" constant="50" id="ecy-KB-R3G"/>
-                                                        <constraint firstAttribute="bottom" secondItem="URk-gQ-ewx" secondAttribute="bottom" constant="3" id="qeg-Ua-eia"/>
                                                         <constraint firstItem="gPh-vW-R4D" firstAttribute="leading" secondItem="UGk-Jn-eYO" secondAttribute="leading" constant="8" id="yeP-c4-9xf"/>
                                                     </constraints>
                                                 </view>
@@ -108,7 +92,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="crowdLevel" destination="gPh-vW-R4D" id="teQ-x2-seI"/>
-                                            <outlet property="floorName" destination="6xb-oZ-KNU" id="qjd-d5-UJQ"/>
                                             <outlet property="libraryName" destination="fLC-H6-xuw" id="Vm9-Vr-NQM"/>
                                         </connections>
                                     </tableViewCell>
