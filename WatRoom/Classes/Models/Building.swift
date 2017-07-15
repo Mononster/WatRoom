@@ -30,11 +30,12 @@ final class BuildingAnnotation: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
+    let building: Building
     
-    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
-        
-        self.title = title
-        self.subtitle = subtitle
-        self.coordinate = coordinate
+    init(_ building: Building) {
+        self.building = building
+        self.title = building.name
+        self.subtitle = String(building.classrooms.count) + " Classrooms Available"
+        self.coordinate = building.locationCoordinate
     }
 }

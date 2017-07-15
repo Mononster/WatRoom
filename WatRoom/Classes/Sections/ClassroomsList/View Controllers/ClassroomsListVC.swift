@@ -12,7 +12,7 @@ import MapKit
 
 protocol ClassroomsListVCDelegate: class {
     func didTapCrowdLevel()
-    func didTapClassroom(_ classroom: Classroom)
+    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building)
 }
 
 class ClassroomsListVC: UIViewController, StoryboardInstantiable {
@@ -33,7 +33,11 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var tableView: UITableView?
     
-    fileprivate var buildings: [Building] = []
+    fileprivate var buildings: [Building] = [] {
+        didSet {
+            reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,12 +74,54 @@ extension ClassroomsListVC: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         hideSearchBar()
+        buildings = ClassroomsManager.sharedInstance.buildings
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard searchText.characters.count > 0 else {
+            buildings = ClassroomsManager.sharedInstance.buildings
+            return
+        }
+    
+        buildings = ClassroomsManager.sharedInstance.buildings.filter { $0.name.hasPrefix(searchText) }
+    }
+}
+
+extension ClassroomsListVC: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAnnotationView(sender:)))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func didTapAnnotationView(sender: UITapGestureRecognizer) {
+        guard
+            let annotationView = sender.view as? MKAnnotationView,
+            let annotation = annotationView.annotation as? BuildingAnnotation else { return }
+        
+        let annotationBuilding = annotation.building
+        
+        for (index, building) in ClassroomsManager.sharedInstance.buildings.enumerated() {
+            guard building.abbreviation != annotationBuilding.abbreviation else {
+                ClassroomsManager.sharedInstance.buildingsFilter[index] = true
+                continue
+            }
+            
+            ClassroomsManager.sharedInstance.buildingsFilter[index] = false
+        }
+        
+        didUpdateFilters()
+        
+        updateListMapViewState(true) { [weak self] in
+            self?.sortDropDownTable?.mapButton?.isEnabled = true
+        }
     }
 }
 
 extension ClassroomsListVC {
     
     fileprivate func configureMapView() {
+        mapView?.delegate = self
         requestLocationAccess()
     }
     
@@ -83,9 +129,7 @@ extension ClassroomsListVC {
         var annotations: [BuildingAnnotation] = []
         
         for building in buildings {
-            let annotation = BuildingAnnotation(title: building.name,
-                                                subtitle: "Classrooms available: " + String(building.classrooms.count),
-                                                coordinate: building.locationCoordinate)
+            let annotation = BuildingAnnotation(building)
             annotations.append(annotation)
         }
         
@@ -180,6 +224,7 @@ extension ClassroomsListVC: MenuDelegate {
         
         buildings = filteredBuildings
     }
+    
     func updateListMapViewState(_ isListView: Bool, completion: @escaping () -> ()) {
         
         sortDropDownTable?.hideViewWithoutAnimation()
@@ -225,14 +270,14 @@ extension ClassroomsListVC: MenuDelegate {
             let rangeStart = startIndex - minIndex
             let rangeEnd = endIndex - minIndex - 1
             
-            guard rangeStart >= 0 && rangeEnd < availability.count else { continue }
+            guard rangeStart >= 0 && rangeEnd < availability.count && rangeStart < rangeEnd else { continue }
             let filteredAvailability = Array(availability[rangeStart...rangeEnd])
             
             guard filteredAvailability.count > 0 else { continue }
             
             let shouldShowClassroom = filteredAvailability.reduce(0, { (result, available) in
                 return available ? result + 1 : result
-            }) > 0
+            }) > 1
             
             if shouldShowClassroom {
                 filteredClassrooms.append(classroom)
@@ -277,7 +322,7 @@ extension ClassroomsListVC: UITableViewDelegate {
         let building = buildings[indexPath.section]
         let classroom = building.classrooms[indexPath.row]
         
-        delegate?.didTapClassroom(classroom)
+        delegate?.didTapClassroom(classroom, inBuilding: building)
     }
     
     
