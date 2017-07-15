@@ -64,6 +64,7 @@
 		8714D70A1F19D57F008C06B3 /* DataLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataLoadingView.xib; sourceTree = "<group>"; };
 		8714D70C1F19D5B4008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = goose.gif; path = ../../../../../Downloads/goose.gif; sourceTree = "<group>"; };
 		8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
+		8714D7101F19DA54008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = goose.gif; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
 				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
 				8714D70C1F19D5B4008C06B3 /* goose.gif */,
+				8714D7101F19DA54008C06B3 /* goose.gif */,
 				87C41CE81ED896B5001E90F1 /* Info.plist */,
 				F4D16EA21F19408400622DA4 /* GoogleService-Info.plist */,
 				F4DE36451EE67AB600F9D89E /* Localizable.strings */,

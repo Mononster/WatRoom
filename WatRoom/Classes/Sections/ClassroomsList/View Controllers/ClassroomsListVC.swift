@@ -38,7 +38,6 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
         configureMapView()
         
         self.tableView?.separatorStyle = .none
