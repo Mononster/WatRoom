@@ -53,8 +53,6 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
             self?.dataLodingView?.isHidden = true
             self?.tableView?.separatorStyle = .singleLine
         }
-        
-        didUpdateFilters()
     }
     
     func didTapCrowdLevel(sender: UIBarButtonItem) {
@@ -83,7 +81,7 @@ extension ClassroomsListVC: UISearchBarDelegate {
             return
         }
     
-        buildings = ClassroomsManager.sharedInstance.buildings.filter { $0.name.hasPrefix(searchText) }
+        buildings = ClassroomsManager.sharedInstance.buildings.filter { $0.name.lowercased().hasPrefix(searchText.lowercased()) }
     }
 }
 
@@ -116,6 +114,8 @@ extension ClassroomsListVC: MKMapViewDelegate {
             self?.sortDropDownTable?.mapButton?.isEnabled = true
         }
     }
+    
+    
 }
 
 extension ClassroomsListVC {
@@ -138,21 +138,13 @@ extension ClassroomsListVC {
     }
     
     func requestLocationAccess() {
-        let status = CLLocationManager.authorizationStatus()
-        
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView?.showsUserLocation = true
-        case .denied, .restricted:
-            print("location access denied")
-            
-        default:
+        } else {
             locationManager.requestWhenInUseAuthorization()
         }
     }
 }
-
-
 
 extension ClassroomsListVC {
     
@@ -209,7 +201,19 @@ extension ClassroomsListVC: MenuDelegate {
     
     func didUpdateFilters() {
         var filteredBuildings: [Building] = []
-
+        
+        func shouldShowBasedOnLocation(building: Building) -> Bool {
+            guard let userCoordinate = mapView?.userLocation.coordinate,
+                let filterDistance = ClassroomsManager.sharedInstance.distanceFilterDistance else { return true }
+            
+            let userPoint = MKMapPointForCoordinate(userCoordinate)
+            let buildingPoint = MKMapPointForCoordinate(building.locationCoordinate)
+            
+            let distance = MKMetersBetweenMapPoints(userPoint, buildingPoint)
+            
+            return distance <= filterDistance
+        }
+        
         for (index, building) in ClassroomsManager.sharedInstance.buildings.enumerated() {
             guard ClassroomsManager.sharedInstance.buildingsFilter.count > 0,
                 ClassroomsManager.sharedInstance.buildingsFilter[index] != false else { continue }
@@ -218,7 +222,7 @@ extension ClassroomsListVC: MenuDelegate {
                                             location: building.locationCoordinate,
                                             classrooms: timeFilterClassrooms(forBuilding: building))
             
-            guard filteredBuilding.classrooms.count > 0 else { continue }
+            guard filteredBuilding.classrooms.count > 0 && shouldShowBasedOnLocation(building: filteredBuilding) else { continue }
             filteredBuildings.append(filteredBuilding)
         }
         
@@ -255,29 +259,32 @@ extension ClassroomsListVC: MenuDelegate {
         let minIndex = 7 * 60 * 60 / tenMinutes
         let maxIndex = 22 * 60 * 60 / tenMinutes
         
-        let day = ClassroomsManager.sharedInstance.dayFilter
+        guard let timeFilter = ClassroomsManager.sharedInstance.timeFilter else {
+            return building.classrooms
+        }
         
-        let startIndex = Int(ClassroomsManager.sharedInstance.timeFilter.start.timeIntervalSinceReferenceDate) / tenMinutes
-        let endIndex = Int(ClassroomsManager.sharedInstance.timeFilter.end.timeIntervalSinceReferenceDate) / tenMinutes
+        let startIndex = Int(timeFilter.start.timeIntervalSinceReferenceDate) / tenMinutes
+        let endIndex = Int(timeFilter.end.timeIntervalSinceReferenceDate) / tenMinutes
         
         guard startIndex >= minIndex && endIndex <= maxIndex else { return [] }
         
         var filteredClassrooms: [Classroom] = []
         
         for classroom in building.classrooms {
-            guard let availability = classroom.availability[day], availability.count == 90 else { continue }
+            guard let availability = classroom.availability[ClassroomsManager.sharedInstance.dayFilter],
+                availability.count == 90 else { continue }
             
             let rangeStart = startIndex - minIndex
             let rangeEnd = endIndex - minIndex - 1
             
-            guard rangeStart >= 0 && rangeEnd < availability.count && rangeStart < rangeEnd else { continue }
+            guard rangeStart > 0 && rangeEnd < availability.count && rangeStart < rangeEnd else { continue }
             let filteredAvailability = Array(availability[rangeStart...rangeEnd])
             
             guard filteredAvailability.count > 0 else { continue }
             
             let shouldShowClassroom = filteredAvailability.reduce(0, { (result, available) in
                 return available ? result + 1 : result
-            }) > 1
+            }) > 2
             
             if shouldShowClassroom {
                 filteredClassrooms.append(classroom)
@@ -324,8 +331,6 @@ extension ClassroomsListVC: UITableViewDelegate {
         
         delegate?.didTapClassroom(classroom, inBuilding: building)
     }
-    
-    
 }
 
 extension ClassroomsListVC: UITableViewDataSource {
