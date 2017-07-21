@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eXh-G1-Ga7" userLabel="Life Alert Upgrade Cell" customClass="AlertUpgradeCell" customModule="RateMyProfSpider" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXh-G1-Ga7" id="AvK-II-xl4">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG7-wB-b6S">
+                        <rect key="frame" x="6" y="0.0" width="308" height="39"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                        <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDn-LB-3ZG">
+                        <rect key="frame" x="6" y="42" width="308" height="1"/>
+                        <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="N17-Mq-FiB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qG7-wB-b6S" firstAttribute="top" secondItem="AvK-II-xl4" secondAttribute="top" id="1jX-tY-IUN"/>
+                    <constraint firstAttribute="bottom" secondItem="qG7-wB-b6S" secondAttribute="bottom" constant="4" id="MiL-Yj-DTI"/>
+                    <constraint firstAttribute="trailing" secondItem="QDn-LB-3ZG" secondAttribute="trailing" constant="6" id="XAY-5r-oE8"/>
+                    <constraint firstAttribute="bottom" secondItem="QDn-LB-3ZG" secondAttribute="bottom" id="a5M-dS-WaO"/>
+                    <constraint firstAttribute="trailing" secondItem="qG7-wB-b6S" secondAttribute="trailing" constant="6" id="aOg-q6-kIZ"/>
+                    <constraint firstItem="qG7-wB-b6S" firstAttribute="leading" secondItem="AvK-II-xl4" secondAttribute="leading" constant="6" id="cJu-ZO-kCi"/>
+                    <constraint firstItem="QDn-LB-3ZG" firstAttribute="leading" secondItem="AvK-II-xl4" secondAttribute="leading" constant="6" id="mGT-ni-oqo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="shortDescription" destination="qG7-wB-b6S" id="v5S-Or-BSF"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="70"/>
+        </tableViewCell>
+    </objects>
+</document>

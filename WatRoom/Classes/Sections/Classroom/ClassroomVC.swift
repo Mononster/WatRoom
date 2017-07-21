@@ -29,6 +29,12 @@ class ClassroomVC: UIViewController, StoryboardInstantiable {
     
     weak var delegate: ClassroomVCDelegate?
     
+    @IBAction func tappedReport(_ sender: Any) {
+        let alert = UWScheduleAlert(style: UWScheduleAlertStyle.notifyEnableNotification)
+        alert.delegate = self
+        alert.show()
+    }
+    
     var data: (classroom: Classroom, building: Building)? {
         didSet {
             reloadData()
@@ -76,5 +82,12 @@ extension ClassroomVC {
     func setupImageView() {
         classRoomImage.layer.cornerRadius = 5
         classRoomImage.layer.masksToBounds = true
+    }
+}
+
+extension ClassroomVC: UWScheduleAlertDelegate {
+    
+    func userEnableNotification() {
+        
     }
 }

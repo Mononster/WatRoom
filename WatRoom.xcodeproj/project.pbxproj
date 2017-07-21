@@ -12,6 +12,16 @@
 		8714D70F1F19D5D9008C06B3 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */; };
 		8714D7141F19E24B008C06B3 /* goose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8714D7121F19E159008C06B3 /* goose.gif */; };
 		8714D7161F19E875008C06B3 /* CrowdLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714D7151F19E875008C06B3 /* CrowdLevelCell.swift */; };
+		87242C871F21D9F40020E7E4 /* ComposeNoteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87242C7C1F21D9F30020E7E4 /* ComposeNoteAlertView.xib */; };
+		87242C881F21D9F40020E7E4 /* ComposeNoteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87242C7D1F21D9F30020E7E4 /* ComposeNoteAlertView.swift */; };
+		87242C891F21D9F40020E7E4 /* UWScheduleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87242C7E1F21D9F30020E7E4 /* UWScheduleAlert.swift */; };
+		87242C8A1F21D9F40020E7E4 /* AlertNotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87242C801F21D9F30020E7E4 /* AlertNotifyView.swift */; };
+		87242C8B1F21D9F40020E7E4 /* AlertNotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87242C811F21D9F30020E7E4 /* AlertNotifyView.xib */; };
+		87242C8C1F21D9F40020E7E4 /* AlertUpgradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87242C831F21D9F30020E7E4 /* AlertUpgradeCell.swift */; };
+		87242C8D1F21D9F40020E7E4 /* AlertUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87242C841F21D9F30020E7E4 /* AlertUpgradeView.swift */; };
+		87242C8E1F21D9F40020E7E4 /* AlertUpgradeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87242C851F21D9F30020E7E4 /* AlertUpgradeView.xib */; };
+		87242C8F1F21D9F40020E7E4 /* AlertUpgradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87242C861F21D9F30020E7E4 /* AlertUpgradeCell.xib */; };
+		87242C911F21DDED0020E7E4 /* goosegif_style2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 87242C901F21DDED0020E7E4 /* goosegif_style2.gif */; };
 		87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */; };
 		87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE01ED896B5001E90F1 /* Main.storyboard */; };
 		87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C41CE31ED896B5001E90F1 /* Assets.xcassets */; };
@@ -66,6 +76,16 @@
 		8714D70E1F19D5D9008C06B3 /* UIImage+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
 		8714D7121F19E159008C06B3 /* goose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = goose.gif; sourceTree = SOURCE_ROOT; };
 		8714D7151F19E875008C06B3 /* CrowdLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdLevelCell.swift; sourceTree = "<group>"; };
+		87242C7C1F21D9F30020E7E4 /* ComposeNoteAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeNoteAlertView.xib; sourceTree = "<group>"; };
+		87242C7D1F21D9F30020E7E4 /* ComposeNoteAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeNoteAlertView.swift; sourceTree = "<group>"; };
+		87242C7E1F21D9F30020E7E4 /* UWScheduleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UWScheduleAlert.swift; sourceTree = "<group>"; };
+		87242C801F21D9F30020E7E4 /* AlertNotifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotifyView.swift; sourceTree = "<group>"; };
+		87242C811F21D9F30020E7E4 /* AlertNotifyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertNotifyView.xib; sourceTree = "<group>"; };
+		87242C831F21D9F30020E7E4 /* AlertUpgradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUpgradeCell.swift; sourceTree = "<group>"; };
+		87242C841F21D9F30020E7E4 /* AlertUpgradeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUpgradeView.swift; sourceTree = "<group>"; };
+		87242C851F21D9F30020E7E4 /* AlertUpgradeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUpgradeView.xib; sourceTree = "<group>"; };
+		87242C861F21D9F30020E7E4 /* AlertUpgradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUpgradeCell.xib; sourceTree = "<group>"; };
+		87242C901F21DDED0020E7E4 /* goosegif_style2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = goosegif_style2.gif; path = ../../../../../Downloads/goosegif_style2.gif; sourceTree = "<group>"; };
 		87C41CD91ED896B5001E90F1 /* WatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C41CE11ED896B5001E90F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +162,47 @@
 			path = DataLoadingView;
 			sourceTree = "<group>";
 		};
+		87242C7A1F21D9F30020E7E4 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				87242C7B1F21D9F30020E7E4 /* WriteNoteAlert */,
+				87242C7E1F21D9F30020E7E4 /* UWScheduleAlert.swift */,
+				87242C7F1F21D9F30020E7E4 /* NotifyAlert */,
+				87242C821F21D9F30020E7E4 /* UpgradeAlert */,
+			);
+			name = AlertView;
+			path = ../../../../../../IOSDev/RateMyProfSpider/RateMyProfSpider/GeneralViews/AlertView;
+			sourceTree = "<group>";
+		};
+		87242C7B1F21D9F30020E7E4 /* WriteNoteAlert */ = {
+			isa = PBXGroup;
+			children = (
+				87242C7C1F21D9F30020E7E4 /* ComposeNoteAlertView.xib */,
+				87242C7D1F21D9F30020E7E4 /* ComposeNoteAlertView.swift */,
+			);
+			path = WriteNoteAlert;
+			sourceTree = "<group>";
+		};
+		87242C7F1F21D9F30020E7E4 /* NotifyAlert */ = {
+			isa = PBXGroup;
+			children = (
+				87242C801F21D9F30020E7E4 /* AlertNotifyView.swift */,
+				87242C811F21D9F30020E7E4 /* AlertNotifyView.xib */,
+			);
+			path = NotifyAlert;
+			sourceTree = "<group>";
+		};
+		87242C821F21D9F30020E7E4 /* UpgradeAlert */ = {
+			isa = PBXGroup;
+			children = (
+				87242C831F21D9F30020E7E4 /* AlertUpgradeCell.swift */,
+				87242C841F21D9F30020E7E4 /* AlertUpgradeView.swift */,
+				87242C851F21D9F30020E7E4 /* AlertUpgradeView.xib */,
+				87242C861F21D9F30020E7E4 /* AlertUpgradeCell.xib */,
+			);
+			path = UpgradeAlert;
+			sourceTree = "<group>";
+		};
 		879E467D1EF31B1400587BE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +239,7 @@
 				F4DE36271EE1E27D00F9D89E /* Classes */,
 				87C41CDC1ED896B5001E90F1 /* AppDelegate.swift */,
 				8714D7121F19E159008C06B3 /* goose.gif */,
+				87242C901F21DDED0020E7E4 /* goosegif_style2.gif */,
 				87C41CE01ED896B5001E90F1 /* Main.storyboard */,
 				87C41CE31ED896B5001E90F1 /* Assets.xcassets */,
 				87C41CE51ED896B5001E90F1 /* LaunchScreen.storyboard */,
@@ -378,6 +440,7 @@
 		F4DE36651EE685D100F9D89E /* Classroom */ = {
 			isa = PBXGroup;
 			children = (
+				87242C7A1F21D9F30020E7E4 /* AlertView */,
 				F4564A8C1F16A54600020CF5 /* ClassroomVC.swift */,
 			);
 			name = Classroom;
@@ -450,10 +513,15 @@
 				87C41CE71ED896B5001E90F1 /* LaunchScreen.storyboard in Resources */,
 				F4DE36461EE67AB600F9D89E /* Localizable.strings in Resources */,
 				F4D16EA31F19408400622DA4 /* GoogleService-Info.plist in Resources */,
+				87242C8E1F21D9F40020E7E4 /* AlertUpgradeView.xib in Resources */,
+				87242C871F21D9F40020E7E4 /* ComposeNoteAlertView.xib in Resources */,
 				F45307D51EF5FB69001DF6D0 /* DropDownMenuTimeCell.xib in Resources */,
+				87242C8F1F21D9F40020E7E4 /* AlertUpgradeCell.xib in Resources */,
 				87C41CE41ED896B5001E90F1 /* Assets.xcassets in Resources */,
 				F4DE36481EE67B0300F9D89E /* ConfigConstants.plist in Resources */,
+				87242C8B1F21D9F40020E7E4 /* AlertNotifyView.xib in Resources */,
 				87C41CE21ED896B5001E90F1 /* Main.storyboard in Resources */,
+				87242C911F21DDED0020E7E4 /* goosegif_style2.gif in Resources */,
 				F45307D31EF5FB69001DF6D0 /* DropDownMenuCell.xib in Resources */,
 				F45307C91EF5FB57001DF6D0 /* NavigationButton.xib in Resources */,
 				8714D70B1F19D57F008C06B3 /* DataLoadingView.xib in Resources */,
@@ -515,12 +583,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87242C881F21D9F40020E7E4 /* ComposeNoteAlertView.swift in Sources */,
 				F4DE36681EE687C000F9D89E /* Protocols.swift in Sources */,
 				F4DE36551EE67DB900F9D89E /* ClassroomsListCoordinator.swift in Sources */,
 				F45307CD1EF5FB60001DF6D0 /* DropDownMenuConfig.swift in Sources */,
+				87242C8D1F21D9F40020E7E4 /* AlertUpgradeView.swift in Sources */,
 				F4DE36591EE67E3400F9D89E /* CrowdLevelCoordinator.swift in Sources */,
 				F45307DE1EF5FB7C001DF6D0 /* CircularSlider+Draw.swift in Sources */,
 				F4DE36501EE67BEA00F9D89E /* Building.swift in Sources */,
+				87242C891F21D9F40020E7E4 /* UWScheduleAlert.swift in Sources */,
 				F4DE364C1EE67BC900F9D89E /* Extensions.swift in Sources */,
 				F45307D21EF5FB69001DF6D0 /* DropDownMenuCell.swift in Sources */,
 				F44495BA1EF6DACB004B4778 /* MockData.swift in Sources */,
@@ -538,6 +609,8 @@
 				F45307D41EF5FB69001DF6D0 /* DropDownMenuTimeCell.swift in Sources */,
 				F45307E51EF5FBCE001DF6D0 /* Date+Weekdays.swift in Sources */,
 				F45307CC1EF5FB60001DF6D0 /* DropDownMenu.swift in Sources */,
+				87242C8C1F21D9F40020E7E4 /* AlertUpgradeCell.swift in Sources */,
+				87242C8A1F21D9F40020E7E4 /* AlertNotifyView.swift in Sources */,
 				87C41CDD1ED896B5001E90F1 /* AppDelegate.swift in Sources */,
 				F4DE364E1EE67BD400F9D89E /* Classroom.swift in Sources */,
 				F4DE36401EE6766200F9D89E /* ClassroomsManager.swift in Sources */,
