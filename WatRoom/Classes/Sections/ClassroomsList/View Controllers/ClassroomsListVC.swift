@@ -12,7 +12,7 @@ import MapKit
 
 protocol ClassroomsListVCDelegate: class {
     func didTapCrowdLevel()
-    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building)
+    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building, withTime: String)
 }
 
 class ClassroomsListVC: UIViewController, StoryboardInstantiable {
@@ -53,6 +53,9 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
             self?.dataLodingView?.isHidden = true
             self?.tableView?.separatorStyle = .singleLine
         }
+        
+        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(resetAllFilters))
+        sortDropDownTable?.addGestureRecognizer(longTapGesture)
     }
     
     func didTapCrowdLevel(sender: UIBarButtonItem) {
@@ -65,6 +68,18 @@ class ClassroomsListVC: UIViewController, StoryboardInstantiable {
         
         guard let map = mapView else { return }
         map.showAnnotations(map.annotations, animated: true)
+    }
+    
+    func resetAllFilters() {
+        for i in 0..<ClassroomsManager.sharedInstance.buildingsFilter.count {
+            ClassroomsManager.sharedInstance.buildingsFilter[i] = true
+        }
+        
+        for i in 0..<ClassroomsManager.sharedInstance.distanceFilter.count {
+            ClassroomsManager.sharedInstance.distanceFilter[i] = false
+        }
+        
+        didUpdateFilters()
     }
 }
 
@@ -113,9 +128,11 @@ extension ClassroomsListVC: MKMapViewDelegate {
         updateListMapViewState(true) { [weak self] in
             self?.sortDropDownTable?.mapButton?.isEnabled = true
         }
+        
+        if let mapButton = sortDropDownTable?.mapButton {
+            sortDropDownTable?.mapListViewButtonTapped(mapButton)
+        }
     }
-    
-    
 }
 
 extension ClassroomsListVC {
@@ -246,7 +263,6 @@ extension ClassroomsListVC: MenuDelegate {
             UIView.transition(from: self.tableView!, to: self.mapView!, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .curveEaseInOut], completion: { _ in
                 completion()
             })
-            
         }
     }
     
@@ -326,10 +342,13 @@ extension ClassroomsListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        guard let cell = tableView.cellForRow(at: indexPath) as? ClassroomsListCell,
+            let time = cell.time?.text else { return }
+        
         let building = buildings[indexPath.section]
         let classroom = building.classrooms[indexPath.row]
         
-        delegate?.didTapClassroom(classroom, inBuilding: building)
+        delegate?.didTapClassroom(classroom, inBuilding: building, withTime: time)
     }
 }
 

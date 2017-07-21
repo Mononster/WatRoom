@@ -14,7 +14,7 @@ class ClassroomsListCell: UITableViewCell, StoryboardInstantiable {
     static var identifier = "ClassroomsListCell"
     
     @IBOutlet fileprivate weak var roomNumber: UILabel?
-    @IBOutlet fileprivate weak var time: UILabel?
+    @IBOutlet fileprivate(set) weak var time: UILabel?
     
     var classroom: Classroom? {
         didSet {

@@ -21,14 +21,15 @@ class ClassroomVC: UIViewController, StoryboardInstantiable {
             setupImageView()
         }
     }
+    
     @IBOutlet fileprivate weak var roomtitle: UILabel!
-    @IBOutlet fileprivate weak var date: UILabel?
     
     @IBOutlet fileprivate weak var shareButton: UIButton!
     @IBOutlet fileprivate weak var reportErrorButton: UIButton!
     
     weak var delegate: ClassroomVCDelegate?
     
+<<<<<<< HEAD
     @IBAction func tappedReport(_ sender: Any) {
         let alert = UWScheduleAlert(style: UWScheduleAlertStyle.notifyEnableNotification)
         alert.delegate = self
@@ -36,6 +37,9 @@ class ClassroomVC: UIViewController, StoryboardInstantiable {
     }
     
     var data: (classroom: Classroom, building: Building)? {
+=======
+    var data: (classroom: Classroom, building: Building, time: String)? {
+>>>>>>> cc76db66d111a4dac1918e6f40a1f69a1684914a
         didSet {
             reloadData()
         }
@@ -60,6 +64,15 @@ class ClassroomVC: UIViewController, StoryboardInstantiable {
         setupUI()
         
         roomtitle?.text = building.abbreviation + " - " + classroom.roomNumber
+    }
+    
+    @IBAction func didTapShare(_ sender: Any) {
+        guard let classroom = data?.classroom, let building = data?.building, let time = data?.time else { return }
+        
+        let sampleMessage = "Meet at \(building.abbreviation)-\(classroom.roomNumber) between \(time)"
+        
+        let activityViewController = UIActivityViewController(activityItems: [sampleMessage], applicationActivities: nil)
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 
