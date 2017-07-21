@@ -22,11 +22,11 @@ final class ClassroomsListCoordinator: Coordinator {
 
 extension ClassroomsListCoordinator: ClassroomsListVCDelegate {
     
-    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building) {
+    func didTapClassroom(_ classroom: Classroom, inBuilding building: Building, withTime time: String) {
         let classroomCoordinator = ClassroomCoordinator(withNavigationController: navigationController)
         add(childCoordinator: classroomCoordinator)
         classroomCoordinator.delegate = self
-        classroomCoordinator.start(withClassroom: classroom, building: building)
+        classroomCoordinator.start(withClassroom: classroom, building: building, time: time)
     }
     
     func didTapCrowdLevel() {

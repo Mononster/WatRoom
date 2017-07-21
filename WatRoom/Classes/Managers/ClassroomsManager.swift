@@ -29,7 +29,7 @@ class ClassroomsManager {
         if distanceFilter[0] {
             return CLLocationDistance(100)
         } else if distanceFilter[1] {
-            return CLLocationDistance(500)
+            return CLLocationDistance(300)
         } else if distanceFilter[2] {
             return CLLocationDistance(1000)
         }

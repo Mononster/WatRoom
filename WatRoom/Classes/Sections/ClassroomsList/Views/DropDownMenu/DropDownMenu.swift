@@ -40,7 +40,7 @@ class SortDropDownTable: UIView {
     var btnToScreenMargin: CGFloat = 15
     var menuBarHeight: CGFloat = 40
     
-    fileprivate var isShowingMap = false
+    var isShowingMap = false
     fileprivate(set) var mapButton: NavigationButton?
     
     weak var menuDelegate: MenuDelegate?
@@ -73,7 +73,7 @@ class SortDropDownTable: UIView {
     
     private func configureMenuData() {
         let buildings = ClassroomsManager.sharedInstance.buildings.map { $0.abbreviation + " - " + $0.name }
-        let distance = ["Less than 50 metres", "Less than 100 metres", "Less than 500 metres"]
+        let distance = ["Less than 100 metres", "Less than 300 metres", "Less than 1000 metres"]
         
         let buildingsFilter = Array(repeating: true, count: buildings.count)
         let distanceFilter = Array(repeating: false, count: distance.count)
@@ -83,7 +83,6 @@ class SortDropDownTable: UIView {
         ClassroomsManager.sharedInstance.buildingsFilter = buildingsFilter
         ClassroomsManager.sharedInstance.distanceFilter = distanceFilter
     }
-    
 }
 
 extension SortDropDownTable {
@@ -278,7 +277,7 @@ extension SortDropDownTable{
         
     }
     
-    func mapListViewButtonTapped(_ sender: NavigationButton ){
+    func mapListViewButtonTapped(_ sender: NavigationButton){
         isShowingMap = !isShowingMap
         
         self.mapButton?.isEnabled = false

@@ -16,12 +16,12 @@ final class ClassroomCoordinator: Coordinator {
     
     weak var delegate: ClassroomCoordinatorDelegate?
     
-    func start(withClassroom classroom: Classroom, building: Building) {
+    func start(withClassroom classroom: Classroom, building: Building, time: String) {
         guard let classroomVC = UIStoryboard.main.instantiateViewController(withIdentifier:
             ClassroomVC.identifier) as? ClassroomVC else { return }
         
         classroomVC.delegate = self
-        classroomVC.data = (classroom, building)
+        classroomVC.data = (classroom, building, time)
         navigationController.pushViewController(classroomVC, animated: true)
     }
 }
